@@ -1,5 +1,11 @@
-# The Midcourse Project | Team 1
+# Newsroom Project | Team 1
 ### Authors
+[Emma]()
+[Karro]()
+[Pierre]()
+[Philip]()
+[Kayla]()
+[Thomas]()
 
 ### Workflow Ground Rules
 
@@ -48,8 +54,8 @@
 
  - 
 ## Built with
-**Front End:** React v. | CSS  
-**Back End:** Ruby 2.5.1 | Rails 6.0.2 
+**Front End:** React v.16.13.0 | CSS  
+**Back End:** Ruby 2.6.3 | Rails 6.0.2 
 **Testing framework:** Cypress  
 **Deployed at:** [Netlify]() and [Heroku]().
 ## The code   
@@ -86,4 +92,4 @@ $ yarn start
 [MIT-license](https://en.wikipedia.org/wiki/MIT_License)
 ### Acknowledgement  
 - Material provided by [Craft Academy](https://craftacademy.se)
-- Thomas Ochman for guidance and demos
+- Thomas Ochman/Oliver Ochman/Faraz Naeem/Noel Ryan for guidance and demos
