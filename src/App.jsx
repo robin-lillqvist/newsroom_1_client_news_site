@@ -9,14 +9,13 @@ class App extends Component {
   componentDidMount() {
     axios.get("/articles").then(response => {
       this.setState({ articles: response.data.articles });
-      debugger
     });
   }
   render() {
     let displayArticles;
     displayArticles = this.state.articles.map(article => {
       return (
-        <div key={article.id} id="article-list">
+        <div key={article.id}>
           {article.title}
           {article.lead}
         </div>
@@ -27,7 +26,9 @@ class App extends Component {
       <h1>
         Berlingo New
       </h1>
+      <div id="article-list">
       {displayArticles}
+      </div>
       </>
     )
   }
