@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import DisplayAllArticles from "./components/DisplayAllArticles";
 import { fetchArticles } from "./state/actions/articleActions";
 import { bindActionCreators } from "redux";
+import { Grid, Image } from 'semantic-ui-react';
 
 const App = props => {
   props.fetchArticles();
@@ -14,4 +15,5 @@ const mapDispatchToProps = dispatch => {
     fetchArticles: bindActionCreators(fetchArticles, dispatch)
   };
 };
+
 export default connect(null, mapDispatchToProps)(App);
