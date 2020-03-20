@@ -1,18 +1,17 @@
-import React from 'react'
-import { connect } from 'react-redux'
-
+import React from "react";
+import { connect } from "react-redux";
 
 const DisplayAllArticles = props => {
   let articleDisplay = props.articles.map(article => {
     return (
-      <div>
-        <h4 key={article.id}>{article.title}</h4>
+      <div key={article.id}>
+        <h4>{article.title}</h4>
         <p>{article.lead}</p>
       </div>
     );
   });
 
-  return <>{articleDisplay}</>;
+  return <div id="article-list">{articleDisplay}</div>;
 };
 
 const mapStateToProps = state => {
@@ -21,4 +20,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(DisplayAllArticles)
+export default connect(mapStateToProps)(DisplayAllArticles);

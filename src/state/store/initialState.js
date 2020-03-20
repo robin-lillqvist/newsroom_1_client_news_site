@@ -1,5 +1,5 @@
 const initialState = {
-	articles: true
-}
+  articles: []
+};
 
-export default initialState
+export default initialState;
