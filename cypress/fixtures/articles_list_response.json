@@ -1,0 +1,19 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Article Title",
+      "lead": "At some point there will be something the read in the lead"
+    },
+    {
+      "id": 2,
+      "title": "Coronavirus in Sweden",
+      "lead": "We are all in quarentine"
+    },
+    {
+      "id": 3,
+      "title": "Thomas Got a New Car",
+      "lead": "He bought it to comfort himself"
+    }
+  ]
+}
