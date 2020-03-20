@@ -1,15 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Grid, Header, Image} from "semantic-ui-react";
-import  ThomasCar  from '../images/IMG_0745.JPG'
+import { Grid, Header, Image } from "semantic-ui-react";
+import ThomasCar from "../images/IMG_0745.JPG";
 
 const DisplayAllArticles = props => {
   let articleDisplay = props.articles.map(article => {
     return (
       <>
-        <Grid key={article.id} align='center'>
+        <Grid key={article.id} align="center">
           <Grid.Column>
-            <Image src={ ThomasCar } size='medium'/>
+            <Image src={ThomasCar} size="medium" />
             <Header>{article.title}</Header>
             <p>{article.lead}</p>
           </Grid.Column>
@@ -18,11 +18,7 @@ const DisplayAllArticles = props => {
     );
   });
 
-  return (
-      <div id="article-list">
-        {articleDisplay}
-      </div>
-  );
+  return <div id="article-list">{articleDisplay}</div>;
 };
 
 const mapStateToProps = state => {

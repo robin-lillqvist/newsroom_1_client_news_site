@@ -6,9 +6,7 @@ import { bindActionCreators } from "redux";
 
 const App = props => {
   props.fetchArticles();
-  return (
-      <DisplayAllArticles />
-  );
+  return <DisplayAllArticles />;
 };
 const mapDispatchToProps = dispatch => {
   return {
