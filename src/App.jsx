@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import DisplayAllArticles from "./components/DisplayAllArticles";
 import { fetchArticles } from "./state/actions/articleActions";
 import { bindActionCreators } from "redux";
-import { Grid, Image } from 'semantic-ui-react';
 
 const App = props => {
   props.fetchArticles();
-
-  return <DisplayAllArticles />;
+  return (
+      <DisplayAllArticles />
+  );
 };
 const mapDispatchToProps = dispatch => {
   return {
