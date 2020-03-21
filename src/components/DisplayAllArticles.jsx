@@ -6,9 +6,9 @@ import { fetchSingleArticle } from "../state/actions/articleActions";
 import { bindActionCreators } from "redux";
 
 const DisplayAllArticles = props => {
-  const singleArticle = (articleID) => {
-    props.fetchSingleArticle(articleID)
-  }
+  const singleArticle = articleID => {
+    props.fetchSingleArticle(articleID);
+  };
   let articleDisplay = props.articles.map(article => {
     return (
       <>
@@ -17,7 +17,11 @@ const DisplayAllArticles = props => {
             <Image src={ThomasCar} size="medium" />
             <Header>{article.title}</Header>
             <p>{article.lead}</p>
-            <Button id={`open-article-${article.id}`} onClick={() => singleArticle(article.id)} key={article.id}>
+            <Button
+              id={`open-article-${article.id}`}
+              onClick={() => singleArticle(article.id)}
+              key={article.id}
+            >
               Read more
             </Button>
           </Grid.Column>

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import DisplayAllArticles from "./components/DisplayAllArticles";
 import { fetchArticles } from "./state/actions/articleActions";
 import { bindActionCreators } from "redux";
-import DisplaySingleArticle from './components/DisplaySingleArticle'
+import DisplaySingleArticle from "./components/DisplaySingleArticle";
 
 const App = props => {
   props.fetchArticles();
@@ -12,8 +12,7 @@ const App = props => {
       {props.showArticlesList && <DisplayAllArticles />}
       {props.singleArticle && <DisplaySingleArticle />}
     </>
-  )
-
+  );
 };
 const mapDispatchToProps = dispatch => {
   return {
@@ -25,7 +24,7 @@ const mapStateToProps = state => {
   return {
     showArticlesList: state.showArticlesList,
     singleArticle: state.singleArticle
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
