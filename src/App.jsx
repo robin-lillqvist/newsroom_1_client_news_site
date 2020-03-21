@@ -3,10 +3,17 @@ import { connect } from "react-redux";
 import DisplayAllArticles from "./components/DisplayAllArticles";
 import { fetchArticles } from "./state/actions/articleActions";
 import { bindActionCreators } from "redux";
+import DisplaySingleArticle from './components/DisplaySingleArticle'
 
 const App = props => {
   props.fetchArticles();
-  return <DisplayAllArticles />;
+  return (
+    <>
+      {props.showArticlesList && <DisplayAllArticles />}
+      {props.singleArticle && <DisplaySingleArticle />}
+    </>
+  )
+
 };
 const mapDispatchToProps = dispatch => {
   return {
@@ -14,4 +21,11 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(App);
+const mapStateToProps = state => {
+  return {
+    showArticlesList: state.showArticlesList,
+    singleArticle: state.singleArticle
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
