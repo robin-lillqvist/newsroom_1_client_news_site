@@ -1,5 +1,7 @@
 const initialState = {
-  articles: []
+  articles: [],
+  singleArticle: undefined,
+  showArticlesList: true
 };
 
 export default initialState;
