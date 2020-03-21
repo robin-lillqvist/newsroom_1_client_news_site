@@ -1,7 +1,8 @@
 const initialState = {
   articles: [],
   singleArticle: undefined,
-  showArticlesList: true
+  showArticlesList: true,
+  categoryName: ""
 };
 
 export default initialState;
