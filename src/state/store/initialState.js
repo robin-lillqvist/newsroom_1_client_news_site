@@ -1,5 +1,6 @@
 const initialState = {
-  articles: []
+  articles: [],
+  singleArticle: {}
 };
 
 export default initialState;
