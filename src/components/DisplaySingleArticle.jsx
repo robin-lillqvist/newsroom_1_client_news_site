@@ -1,23 +1,22 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Grid, Header, Image } from "semantic-ui-react";
-import { bindActionCreators } from 'redux';
-import moduleName from 'module'
+import { Button, Header, Icon, Image, Container } from "semantic-ui-react";
+
 
 const DisplaySingleArticle = props => {
   let articleDetails;
   let article = props.singleArticle
   articleDetails = (
     <>
-      <Grid key={article.id} align="center">
-        <Grid.Column>
-          <Header>{article.title}</Header>
-          <p>{article.lead}{article.content}</p>
-          <button id="back-button" onClick={() => props.dispatch({type:"BACK_TO_ARTICLE_LIST"})} key={article.id}>
-              Back
-            </button>
-        </Grid.Column>
-      </Grid>
+      <Image size='medium' centered src='https://react.semantic-ui.com/images/wireframe/image.png' /><br />
+      <Container key={article.id} align='center'>
+        <Header as='h1'>{article.title}</Header>
+        <Header as='h4'>{article.lead}</Header>
+        <p>{article.content}</p>
+        <Button id="back-button" onClick={() => props.dispatch({ type: "BACK_TO_ARTICLE_LIST" })} key={article.id}>
+          <Icon name='chevron left' /> Back
+      </Button>
+      </Container>
     </>
   );
 
@@ -31,7 +30,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(DisplaySingleArticle);
-
-// create button for back, and update the showArticlesList back to true, button onclick function then dispatch action and 
-//in root reducer when action is hit update showarticleslist to true, don't have to send payload
-// then add to existing test for back button

@@ -20,7 +20,7 @@ const dispatchArticleAction = json => {
 };
 
 const dispatchSingleArticleAction = json => {
-  return { type: GET_SINGLE_ARTICLE, payload: json.articles };
+  return { type: GET_SINGLE_ARTICLE, payload: json.article };
 }
 
 export { fetchArticles, fetchSingleArticle };

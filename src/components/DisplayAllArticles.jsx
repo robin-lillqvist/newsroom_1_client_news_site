@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Grid, Header, Image } from "semantic-ui-react";
+import { Grid, Header, Image, Button } from "semantic-ui-react";
 import ThomasCar from "../images/IMG_0745.JPG";
 import { fetchSingleArticle } from "../state/actions/articleActions";
 import { bindActionCreators } from "redux";
@@ -17,9 +17,9 @@ const DisplayAllArticles = props => {
             <Image src={ThomasCar} size="medium" />
             <Header>{article.title}</Header>
             <p>{article.lead}</p>
-            <button id={`open-article-${article.id}`} onClick={() => singleArticle(article.id)} key={article.id}>
+            <Button id={`open-article-${article.id}`} onClick={() => singleArticle(article.id)} key={article.id}>
               Read more
-            </button>
+            </Button>
           </Grid.Column>
         </Grid>
       </>
