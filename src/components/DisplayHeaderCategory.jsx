@@ -1,41 +1,58 @@
 import React from "react";
 import { Menu, Segment, Icon } from "semantic-ui-react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { CATEGORY_SELECTION } from '../state/actions/actionTypes'
+import { CATEGORY_SELECTION } from "../state/actions/actionTypes";
 
 const HeaderCategories = props => {
-
-  // handleItemClick = ( { name }) => {
-  //   // this.setState({ activeItem: name })
-  //   this.props.dispatch(
-  //     {type: CATEGORY_SELECTION, payload: name }
-  //   )
-  // }
-
+  
+const handleItemClick = event => { 
   debugger
-  const categories = [{ name: 'latest_news' }, { name: 'culture' }, { name: 'tech' }, { name: 'food' }, { name: 'sports' }];
-  let categoryList = categories.map(item => {
-    return (
-    <Menu.Item
-      id={`category-${item.name}`}
-      name={item.name}
-      key={item.name}
-      as={Link}
-      to={{ pathname: `/${item.name.toLowerCase()}` }}
-      // active={activeItem === category.name}
-      // onCLick={() => handleItemClick()}
-      onClick={() => props.dispatch({ type: CATEGORY_SELECTION, payload: item.name })} 
-    />
+  props.dispatch(
+      {type: CATEGORY_SELECTION, payload: event.target.id }
     )
-  })
+  }
 
-  debugger
+
+  debugger;
   return (
-    < Menu id='article-category' pointing secondary style={{ backgroundColor: "white" }}>
-      {categoryList}
+    <Menu id='article-category' pointing centered secondary style={{ backgroundColor: "white" }}>
+      <Menu.Item
+        name="Latest News"
+        id="latest_news"
+        as={Link}
+        to={{ pathname: "/latest_news" }}
+        onClick={handleItemClick}
+      />
+      <Menu.Item
+        name="Culture"
+        id="culture"
+        as={Link}
+        to={{ pathname: "/culture" }}
+        onClick={handleItemClick}
+      />
+      <Menu.Item
+        name="Tech"
+        id="tech"
+        as={Link}
+        to={{ pathname: "/tech" }}
+        onClick={handleItemClick}
+      />
+      <Menu.Item
+        name="Food"
+        id="food"
+        as={Link}
+        to={{ pathname: "/food" }}
+        onClick={handleItemClick}
+      />
+      <Menu.Item
+        name="Sports"
+        id="sports"
+        as={Link}
+        to={{ pathname: "/sports" }}
+        onClick={handleItemClick}
+      />
     </Menu>
   );
-
-};
+  }
 export default connect()(HeaderCategories);

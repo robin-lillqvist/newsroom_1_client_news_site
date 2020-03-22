@@ -12,7 +12,7 @@ const App = props => {
     <>
       {props.showArticlesList && <DisplayAllArticles />}
       {props.singleArticle && <DisplaySingleArticle />}
-      {props.categoryName && <DisplayArticlesByCategory />}
+      {props.showArticlesByCategory && <DisplayArticlesByCategory />}
 
     </>
   );
@@ -26,7 +26,8 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
   return {
     showArticlesList: state.showArticlesList,
-    singleArticle: state.singleArticle
+    singleArticle: state.singleArticle,
+    showArticlesByCategory: state.showArticlesByCategory
   };
 };
 

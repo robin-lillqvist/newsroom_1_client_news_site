@@ -10,7 +10,7 @@ describe("Visitor can", () => {
   });
   it("see successfully", () => {
     cy.get('#article-category').click()
-    cy.get('#category-culture').click()
+    cy.get('#culture').click()
     cy.get('#article-by-category-list').should('contain', 'Thomas Got a New Car');
     cy.get('#article-by-category-list').should('contain', 'He bought it to comfort himself');
   });

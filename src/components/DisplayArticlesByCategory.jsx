@@ -12,7 +12,7 @@ const DisplayArticlesByCategory = props => {
 
   let articleDisplayByCategory = props.articles.map(article => {
     debugger
-    if (article.category.name === props.categoryName) {
+    if (article.category === props.categoryName) {
       return (
         <Grid key={article.id} align="center">
           <Grid.Column>
@@ -43,7 +43,8 @@ const DisplayArticlesByCategory = props => {
 const mapStateToProps = state => {
   return {
     articles: state.articles,
-    categoryName: state.categoryName
+    categoryName: state.categoryName,
+    showArticlesByCategory: state.showArticlesByCategory
   };
 };
 
