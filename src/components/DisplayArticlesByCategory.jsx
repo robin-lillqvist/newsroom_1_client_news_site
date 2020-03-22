@@ -11,7 +11,7 @@ const DisplayArticlesByCategory = props => {
   };
 
   let articleDisplayByCategory = props.articles.map(article => {
-    debugger
+    debugger;
     if (article.category === props.categoryName) {
       return (
         <Grid key={article.id} align="center">
@@ -29,13 +29,8 @@ const DisplayArticlesByCategory = props => {
           </Grid.Column>
         </Grid>
       );
-    } else {
-      return (
-        <p>There are currently no articles in this category. Please try again later.</p>
-      )
     }
   });
-
 
   return <div id="article-by-category-list">{articleDisplayByCategory}</div>;
 };
@@ -54,4 +49,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DisplayArticlesByCategory);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DisplayArticlesByCategory);

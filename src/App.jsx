@@ -12,7 +12,7 @@ const App = props => {
     <>
       {props.showArticlesList && <DisplayAllArticles />}
       {props.singleArticle && <DisplaySingleArticle />}
-      {props.showArticlesByCategory && <DisplayArticlesByCategory />}
+      {/* {props.showArticlesByCategory && <DisplayArticlesByCategory />} */}
 
     </>
   );
