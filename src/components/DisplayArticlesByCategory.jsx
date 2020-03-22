@@ -4,6 +4,7 @@ import { Grid, Header, Image, Button } from "semantic-ui-react";
 import ThomasCar from "../images/IMG_0745.JPG";
 import { fetchSingleArticle } from "../state/actions/articleActions";
 import { bindActionCreators } from "redux";
+import { Link } from "react-router-dom";
 
 const DisplayArticlesByCategory = props => {
   const singleArticle = articleID => {
@@ -18,13 +19,17 @@ const DisplayArticlesByCategory = props => {
             <Image src={ThomasCar} size="medium" />
             <Header>{article.title}</Header>
             <p>{article.lead}</p>
+            <Link to='/article'>
             <Button
               id={`open-article-category-${article.id}`}
               onClick={() => singleArticle(article.id)}
+              // to={{ pathname: "/article" }}
+              // as={NavLink}
               key={article.id}
             >
-              Read more
+                Read more
             </Button>
+            </Link>
           </Grid.Column>
         </Grid>
       );
@@ -47,4 +52,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(DisplayArticlesByCategory);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DisplayArticlesByCategory);

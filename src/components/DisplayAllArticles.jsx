@@ -4,6 +4,7 @@ import { Grid, Header, Image, Button } from "semantic-ui-react";
 import ThomasCar from "../images/IMG_0745.JPG";
 import { fetchSingleArticle } from "../state/actions/articleActions";
 import { bindActionCreators } from "redux";
+import { Link } from "react-router-dom";
 
 const DisplayAllArticles = props => {
   const singleArticle = articleID => {
@@ -17,13 +18,17 @@ const DisplayAllArticles = props => {
             <Image src={ThomasCar} size="medium" />
             <Header>{article.title}</Header>
             <p>{article.lead}</p>
+            {/* <Link to="/article"> */}
             <Button
               id={`open-article-${article.id}`}
               onClick={() => singleArticle(article.id)}
+              to={{ pathname: "/article", state: { id: article.id } }}
+              as={Link}
               key={article.id}
             >
               Read more
             </Button>
+            {/* </Link> */}
           </Grid.Column>
         </Grid>
       </>
