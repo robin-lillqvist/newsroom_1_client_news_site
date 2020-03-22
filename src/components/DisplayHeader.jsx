@@ -6,8 +6,8 @@ const DisplayHeader = () => {
     <Segment inverted>
       <Menu inverted pointing secondary>
         <Menu.Item
-          name="article-category"
-          id="article-category"
+          name="main-header"
+          id="main-header"
           position="right"
         // active={}
         // onClick={}

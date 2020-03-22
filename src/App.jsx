@@ -4,6 +4,7 @@ import DisplayAllArticles from "./components/DisplayAllArticles";
 import { fetchArticles } from "./state/actions/articleActions";
 import { bindActionCreators } from "redux";
 import DisplaySingleArticle from "./components/DisplaySingleArticle";
+import DisplayArticlesByCategory from './components/DisplayArticlesByCategory';
 
 const App = props => {
   props.fetchArticles();
@@ -11,6 +12,8 @@ const App = props => {
     <>
       {props.showArticlesList && <DisplayAllArticles />}
       {props.singleArticle && <DisplaySingleArticle />}
+      {props.categoryName && <DisplayArticlesByCategory />}
+
     </>
   );
 };

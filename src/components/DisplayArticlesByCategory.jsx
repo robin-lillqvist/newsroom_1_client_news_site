@@ -9,10 +9,11 @@ const DisplayArticlesByCategory = props => {
   const singleArticle = articleID => {
     props.fetchSingleArticle(articleID);
   };
-  if //here we need to set if- statement to take onClick value of category from menu selection
-  let articleDisplay = props.articles.map(article => {
-    return (
-      <>
+
+  let articleDisplayByCategory = props.articles.map(article => {
+    debugger
+    if (article.category.name === props.categoryName) {
+      return (
         <Grid key={article.id} align="center">
           <Grid.Column>
             <Image src={ThomasCar} size="medium" />
@@ -27,16 +28,22 @@ const DisplayArticlesByCategory = props => {
             </Button>
           </Grid.Column>
         </Grid>
-      </>
-    );
+      );
+    } else {
+      return (
+        <p>There are currently no articles in this category. Please try again later.</p>
+      )
+    }
   });
 
-  return <div id="article-list">{articleDisplay}</div>;
+
+  return <div id="article-by-category-list">{articleDisplayByCategory}</div>;
 };
 
 const mapStateToProps = state => {
   return {
-    articles: state.articles
+    articles: state.articles,
+    categoryName: state.categoryName
   };
 };
 
