@@ -9,6 +9,7 @@ const fetchArticles = () => {
 };
 
 const fetchSingleArticle = articleID => {
+  debugger
   return async dispatch => {
     let response = await axios.get(`/articles/${articleID}`);
     return dispatch(dispatchSingleArticleAction(response.data));
@@ -20,6 +21,7 @@ const dispatchArticleAction = json => {
 };
 
 const dispatchSingleArticleAction = json => {
+  debugger
   return { type: GET_SINGLE_ARTICLE, payload: json.article };
 };
 

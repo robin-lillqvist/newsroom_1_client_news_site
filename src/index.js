@@ -30,20 +30,21 @@ const Menu = props => {
           path={props.categoryName}
           component={DisplayArticlesByCategory}
         ></Route>
-        <Route exact path="/article" component={DisplaySingleArticle}></Route>
+        {/* <Route exact path="/article" component={props.singleArticle.length>0 && <DisplaySingleArticle />}></Route> */}
       </Switch>
       {/* <Footer /> */}
     </>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    categoryName: state.categoryName,
-    singleArticle: state.singleArticle,
-    showArticlesByCategory: state.showArticlesByCategory
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     categoryName: state.categoryName,
+//     singleArticle: state.singleArticle,
+//     showArticlesByCategory: state.showArticlesByCategory,
+//     showArticlesList: state.showArticlesList,
+//   };
+// };
 
 ReactDOM.render(
   <Provider store={store}>
@@ -55,4 +56,4 @@ ReactDOM.render(
 );
 
 serviceWorker.unregister();
-export default connect(mapStateToProps);
+// export default connect(mapStateToProps);

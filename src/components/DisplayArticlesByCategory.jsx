@@ -19,17 +19,18 @@ const DisplayArticlesByCategory = props => {
             <Image src={ThomasCar} size="medium" />
             <Header>{article.title}</Header>
             <p>{article.lead}</p>
-            <Link to='/article'>
+            {/* <Link to='/article'> */}
             <Button
               id={`open-article-category-${article.id}`}
               onClick={() => singleArticle(article.id)}
-              // to={{ pathname: "/article" }}
-              // as={NavLink}
+              // to= "/article"
+              // as={Link}
+              // renderAs='button'
               key={article.id}
             >
                 Read more
             </Button>
-            </Link>
+            {/* </Link> */}
           </Grid.Column>
         </Grid>
       );
@@ -47,6 +48,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
+  debugger
   return {
     fetchSingleArticle: bindActionCreators(fetchSingleArticle, dispatch)
   };

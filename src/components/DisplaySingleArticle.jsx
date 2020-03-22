@@ -5,12 +5,11 @@ import { Button, Header, Icon, Image, Container } from "semantic-ui-react";
 const DisplaySingleArticle = props => {
   let articleDetails;
   let article = props.singleArticle;
-  debugger
   articleDetails = (
     <>
       <Image
         size="medium"
-        centered
+        centered="true"
         src="https://react.semantic-ui.com/images/wireframe/image.png"
       />
       <br />

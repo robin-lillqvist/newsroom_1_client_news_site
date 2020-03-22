@@ -22,8 +22,8 @@ const DisplayAllArticles = props => {
             <Button
               id={`open-article-${article.id}`}
               onClick={() => singleArticle(article.id)}
-              to={{ pathname: "/article", state: { id: article.id } }}
-              as={Link}
+              // to={{ pathname: "/article", state: { id: article.id } }}
+              // as={Link}
               key={article.id}
             >
               Read more

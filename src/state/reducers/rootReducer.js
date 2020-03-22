@@ -10,6 +10,7 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case actionTypes.GET_SINGLE_ARTICLE:
+      debugger
       return {
         ...state,
         singleArticle: action.payload,

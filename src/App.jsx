@@ -11,8 +11,8 @@ const App = props => {
   return (
     <>
       {props.showArticlesList && <DisplayAllArticles />}
-      {/* {props.singleArticle && <DisplaySingleArticle />}
-      {props.showArticlesByCategory && <DisplayArticlesByCategory />} */}
+      {props.singleArticle && <DisplaySingleArticle />}
+      {props.showArticlesByCategory && <DisplayArticlesByCategory />}
     </>
   );
 };
@@ -25,8 +25,8 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
   return {
     showArticlesList: state.showArticlesList,
-    // singleArticle: state.singleArticle,
-    // showArticlesByCategory: state.showArticlesByCategory
+    singleArticle: state.singleArticle,
+    showArticlesByCategory: state.showArticlesByCategory
   };
 };
 
