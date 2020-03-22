@@ -1,20 +1,16 @@
 import React from "react";
-import { Menu, Segment, Icon } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { CATEGORY_SELECTION } from "../state/actions/actionTypes";
 
 const HeaderCategories = props => {
-  
-const handleItemClick = event => { 
-  debugger
-  props.dispatch(
-      {type: CATEGORY_SELECTION, payload: event.target.id }
+
+  const handleItemClick = event => {
+    props.dispatch(
+      { type: CATEGORY_SELECTION, payload: event.target.id }
     )
   }
-
-
-  debugger;
   return (
     <Menu id='article-category' pointing centered secondary style={{ backgroundColor: "white" }}>
       <Menu.Item
@@ -54,5 +50,5 @@ const handleItemClick = event => {
       />
     </Menu>
   );
-  }
+}
 export default connect()(HeaderCategories);

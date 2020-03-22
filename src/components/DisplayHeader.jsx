@@ -9,8 +9,6 @@ const DisplayHeader = () => {
           name="main-header"
           id="main-header"
           position="right"
-        // active={}
-        // onClick={}
         >
           <Icon name="sidebar" size="large"></Icon>
         </Menu.Item>

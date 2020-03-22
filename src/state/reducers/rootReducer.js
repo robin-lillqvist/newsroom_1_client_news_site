@@ -25,11 +25,11 @@ const rootReducer = (state = initialState, action) => {
       };
 
       case actionTypes.CATEGORY_SELECTION:
-        debugger
       return {
         ...state,
         categoryName: action.payload,
-        showArticlesByCategory: true
+        showArticlesByCategory: true,
+        showArticlesList: false
       };
 
     default:

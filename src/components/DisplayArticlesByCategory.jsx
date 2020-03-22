@@ -11,7 +11,6 @@ const DisplayArticlesByCategory = props => {
   };
 
   let articleDisplayByCategory = props.articles.map(article => {
-    debugger;
     if (article.category === props.categoryName) {
       return (
         <Grid key={article.id} align="center">
@@ -20,7 +19,7 @@ const DisplayArticlesByCategory = props => {
             <Header>{article.title}</Header>
             <p>{article.lead}</p>
             <Button
-              id={`open-article-${article.id}`}
+              id={`open-article-category-${article.id}`}
               onClick={() => singleArticle(article.id)}
               key={article.id}
             >
@@ -31,7 +30,6 @@ const DisplayArticlesByCategory = props => {
       );
     }
   });
-
   return <div id="article-by-category-list">{articleDisplayByCategory}</div>;
 };
 
@@ -49,7 +47,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DisplayArticlesByCategory);
+export default connect(mapStateToProps,mapDispatchToProps)(DisplayArticlesByCategory);
