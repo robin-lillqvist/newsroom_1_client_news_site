@@ -28,9 +28,11 @@ const rootReducer = (state = initialState, action) => {
       case actionTypes.CATEGORY_SELECTION:
       return {
         ...state,
-        categoryName: action.payload,
+        categoryName: action.payload.categoryName,
         showArticlesByCategory: true,
-        showArticlesList: false
+        showArticlesList: false,
+        activeItem: action.payload.activeItem
+        // ...action.payload
       };
 
     default:

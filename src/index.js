@@ -10,9 +10,9 @@ import "semantic-ui-css/semantic.min.css";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import DisplayHeader from "./components/DisplayHeader";
 import HeaderCategories from "./components/DisplayHeaderCategory";
-import DisplayAllArticles from "./components/DisplayAllArticles";
+// import DisplayAllArticles from "./components/DisplayAllArticles";
 import DisplayArticlesByCategory from "./components/DisplayArticlesByCategory";
-import DisplaySingleArticle from "./components/DisplaySingleArticle";
+// import DisplaySingleArticle from "./components/DisplaySingleArticle";
 
 axios.defaults.baseURL = "http://localhost:3000/api/";
 const store = configureStore();

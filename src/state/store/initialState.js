@@ -3,7 +3,8 @@ const initialState = {
   singleArticle: undefined,
   showArticlesList: true,
   categoryName: "",
-  showArticlesByCategory: false
+  showArticlesByCategory: false,
+  activeItem: ""
 };
 
 export default initialState;
