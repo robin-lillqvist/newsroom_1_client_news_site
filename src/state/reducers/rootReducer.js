@@ -10,12 +10,11 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case actionTypes.GET_SINGLE_ARTICLE:
-      debugger
       return {
         ...state,
         singleArticle: action.payload,
         showArticlesList: false,
-        showArticlesByCategory: false
+        // showArticlesByCategory: false
       };
 
     case actionTypes.BACK_TO_ARTICLE_LIST:
@@ -25,13 +24,13 @@ const rootReducer = (state = initialState, action) => {
         singleArticle: undefined
       };
 
-      case actionTypes.CATEGORY_SELECTION:
+    case actionTypes.CATEGORY_SELECTION:
       return {
         ...state,
         categoryName: action.payload.categoryName,
-        showArticlesByCategory: true,
-        showArticlesList: false,
-        activeItem: action.payload.activeItem
+        // showArticlesByCategory: true,
+        // showArticlesList: false,
+        // activeItem: action.payload.activeItem
         // ...action.payload
       };
 

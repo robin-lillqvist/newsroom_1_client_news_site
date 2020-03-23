@@ -48,7 +48,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  debugger
   return {
     fetchSingleArticle: bindActionCreators(fetchSingleArticle, dispatch)
   };

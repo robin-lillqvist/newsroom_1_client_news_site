@@ -5,8 +5,6 @@ import { connect } from "react-redux";
 import { CATEGORY_SELECTION } from "../state/actions/actionTypes";
 
 const HeaderCategories = props => {
-
-
   const handleItemClick = event => {
     props.dispatch(
       { type: CATEGORY_SELECTION, payload: {categoryName: event.target.id, activeItem: event.target.active} }
