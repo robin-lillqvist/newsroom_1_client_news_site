@@ -1,10 +1,20 @@
 import React from "react";
 import { Menu, Segment, Icon } from "semantic-ui-react";
+import { Login } from './UserLogin'
 
 const DisplayHeader = () => {
+
   return (
     <Segment inverted>
       <Menu inverted pointing secondary >
+        <Menu.Item
+          name="login"
+          id="login"
+          position="right"
+          onClick={() => props.dispatch({ type: LOGIN_USER })}
+        >
+          Login
+        </Menu.Item>
         <Menu.Item
           name="main-header"
           id="main-header"
