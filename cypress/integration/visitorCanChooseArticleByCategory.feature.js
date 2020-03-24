@@ -1,4 +1,4 @@
-describe("Visitor can choose article by categort", () => {
+describe("Visitor can choose article by category", () => {
   beforeEach(() => {
     cy.server();
     cy.route({
@@ -13,7 +13,7 @@ describe("Visitor can choose article by categort", () => {
       response: "fixture:article_details_response.json"
     });
   });
-  it("see successfully", () => {
+  it("successfully", () => {
     cy.get("#article-category").click();
     cy.get("#culture").click();
     cy.get("#article-list")
