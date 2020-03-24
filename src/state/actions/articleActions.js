@@ -23,4 +23,4 @@ const dispatchSingleArticleAction = json => {
   return { type: GET_SINGLE_ARTICLE, payload: json.article };
 };
 
-export { fetchArticles, fetchSingleArticle};
+export { fetchArticles, fetchSingleArticle };

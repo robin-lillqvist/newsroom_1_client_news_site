@@ -7,14 +7,15 @@ import { CATEGORY_SELECTION } from "../state/actions/actionTypes";
 const HeaderCategories = props => {
   const handleItemClick = event => {
     props.dispatch(
-      { type: CATEGORY_SELECTION, payload: {categoryName: event.target.id, activeItem: event.target.active} }
+      { type: CATEGORY_SELECTION, payload: { categoryName: event.target.id, activeItem: event.target.active } }
     )
   }
+
   return (
     <Menu id='article-category' pointing centered secondary style={{ backgroundColor: "white" }}>
       <Menu.Item
         name="All News"
-        id="all"
+        id=""
         color='yellow'
         as={Link}
         to={{ pathname: "/" }}

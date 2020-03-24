@@ -14,7 +14,7 @@ const DisplayHeader = () => {
         </Menu.Item>
       </Menu>
     </Segment>
-    
+
   );
 };
 

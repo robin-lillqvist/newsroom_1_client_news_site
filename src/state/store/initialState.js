@@ -4,7 +4,7 @@ const initialState = {
   showArticlesList: true,
   categoryName: "",
   showArticlesByCategory: false,
-  activeItem: ""
+  activeItem: "all"
 };
 
 export default initialState;

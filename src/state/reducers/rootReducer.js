@@ -13,7 +13,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         singleArticle: action.payload,
-        showArticlesList: false,
+        showArticlesList: false
       };
 
     case actionTypes.BACK_TO_ARTICLE_LIST:

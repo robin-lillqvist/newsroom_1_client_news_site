@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 import "semantic-ui-css/semantic.min.css";
-import { Switch, Route} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import DisplayHeader from "./components/DisplayHeader";
 import HeaderCategories from "./components/DisplayHeaderCategory";
 import Display from './Display'

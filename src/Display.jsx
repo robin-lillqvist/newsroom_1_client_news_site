@@ -7,29 +7,29 @@ import { bindActionCreators } from "redux";
 import DisplaySingleArticle from "./components/DisplaySingleArticle";
 
 const Display = props => {
-	useEffect(() => {
-		props.fetchArticles();
-	}, [])
+  useEffect(() => {
+    props.fetchArticles();
+  }, [])
 
-	return (
-		<>
-			{props.showArticlesList && <DisplayArticles />}
-			{props.singleArticle && <DisplaySingleArticle />}
-		</>
-	);
+  return (
+    <>
+      {props.showArticlesList && <DisplayArticles />}
+      {props.singleArticle && <DisplaySingleArticle />}
+    </>
+  );
 };
 const mapDispatchToProps = dispatch => {
-	return {
-		fetchArticles: bindActionCreators(fetchArticles, dispatch)
-	};
+  return {
+    fetchArticles: bindActionCreators(fetchArticles, dispatch)
+  };
 };
 
 const mapStateToProps = state => {
-	return {
-		showArticlesList: state.showArticlesList,
-		singleArticle: state.singleArticle,
-		showArticlesByCategory: state.showArticlesByCategory
-	};
+  return {
+    showArticlesList: state.showArticlesList,
+    singleArticle: state.singleArticle,
+    showArticlesByCategory: state.showArticlesByCategory
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Display);
