@@ -12,7 +12,7 @@ const HeaderCategories = props => {
   }
   return (
     <Menu id='article-category' pointing centered secondary style={{ backgroundColor: "white" }}>
-      {/* <Menu.Item
+      <Menu.Item
         name="All News"
         id="all"
         color='yellow'
@@ -20,7 +20,7 @@ const HeaderCategories = props => {
         to={{ pathname: "/" }}
         onClick={handleItemClick}
         active={props.activeItem === 'all'}
-      /> */}
+      />
       <Menu.Item
         name="Latest News"
         id="latest_news"

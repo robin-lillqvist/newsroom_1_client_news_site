@@ -14,7 +14,6 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         singleArticle: action.payload,
         showArticlesList: false,
-        // showArticlesByCategory: false
       };
 
     case actionTypes.BACK_TO_ARTICLE_LIST:
@@ -28,10 +27,9 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         categoryName: action.payload.categoryName,
-        // showArticlesByCategory: true,
-        // showArticlesList: false,
-        // activeItem: action.payload.activeItem
-        // ...action.payload
+        singleArticle: undefined,
+        showArticlesList: true,
+        activeItem: action.payload.activeItem
       };
 
     default:
