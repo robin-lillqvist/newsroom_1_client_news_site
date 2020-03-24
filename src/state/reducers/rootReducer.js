@@ -23,6 +23,15 @@ const rootReducer = (state = initialState, action) => {
         singleArticle: undefined
       };
 
+    case actionTypes.CATEGORY_SELECTION:
+      return {
+        ...state,
+        categoryName: action.payload.categoryName,
+        singleArticle: undefined,
+        showArticlesList: true,
+        activeItem: action.payload.activeItem
+      };
+
     default:
       return state;
   }

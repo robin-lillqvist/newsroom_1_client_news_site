@@ -2,16 +2,19 @@
   "articles": [
     {
       "id": 1,
+      "category": "tech",
       "title": "Article Title",
       "lead": "At some point there will be something the read in the lead"
     },
     {
       "id": 2,
+      "category": "food",
       "title": "Coronavirus in Sweden",
       "lead": "We are all in quarentine"
     },
     {
       "id": 3,
+      "category": "culture",
       "title": "Thomas Got a New Car",
       "lead": "He bought it to comfort himself"
     }

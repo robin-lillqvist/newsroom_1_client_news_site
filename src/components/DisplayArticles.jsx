@@ -4,13 +4,20 @@ import { Grid, Header, Image, Button } from "semantic-ui-react";
 import ThomasCar from "../images/IMG_0745.JPG";
 import { fetchSingleArticle } from "../state/actions/articleActions";
 import { bindActionCreators } from "redux";
-import { Link } from "react-router-dom";
 
-const DisplayAllArticles = props => {
+const DisplayArticles = props => {
   const singleArticle = articleID => {
     props.fetchSingleArticle(articleID);
   };
-  let articleDisplay = props.articles.map(article => {
+  let articles
+  if (props.categoryName) {
+    articles = props.articles.filter(article => {
+      return article.category === props.categoryName && article
+    })
+  } else {
+    articles = props.articles
+  }
+  let articleDisplay = articles.map(article => {
     return (
       <>
         <Grid key={article.id} align="center">
@@ -36,7 +43,8 @@ const DisplayAllArticles = props => {
 
 const mapStateToProps = state => {
   return {
-    articles: state.articles
+    articles: state.articles,
+    categoryName: state.categoryName
   };
 };
 
@@ -46,4 +54,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DisplayAllArticles);
+export default connect(mapStateToProps, mapDispatchToProps)(DisplayArticles);

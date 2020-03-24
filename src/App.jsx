@@ -1,30 +1,27 @@
 import React from "react";
-import { connect } from "react-redux";
-import DisplayAllArticles from "./components/DisplayAllArticles";
-import { fetchArticles } from "./state/actions/articleActions";
-import { bindActionCreators } from "redux";
-import DisplaySingleArticle from "./components/DisplaySingleArticle";
+import "./index.css";
+import "semantic-ui-css/semantic.min.css";
+import { Switch, Route } from "react-router-dom";
+import DisplayHeader from "./components/DisplayHeader";
+import HeaderCategories from "./components/DisplayHeaderCategory";
+import Display from './Display'
+
 
 const App = props => {
-  props.fetchArticles();
   return (
     <>
-      {props.showArticlesList && <DisplayAllArticles />}
-      {props.singleArticle && <DisplaySingleArticle />}
+      <DisplayHeader />
+      <HeaderCategories />
+      <Switch>
+        <Route exact path="/" component={Display}></Route>
+        <Route
+          exact
+          path={props.categoryName}
+          component={Display}
+        ></Route>
+      </Switch>
     </>
   );
 };
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchArticles: bindActionCreators(fetchArticles, dispatch)
-  };
-};
 
-const mapStateToProps = state => {
-  return {
-    showArticlesList: state.showArticlesList,
-    singleArticle: state.singleArticle
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App

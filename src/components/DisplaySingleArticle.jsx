@@ -9,7 +9,7 @@ const DisplaySingleArticle = props => {
     <>
       <Image
         size="medium"
-        centered
+        centered="true"
         src="https://react.semantic-ui.com/images/wireframe/image.png"
       />
       <br />
