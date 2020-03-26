@@ -3,14 +3,14 @@ import { GET_ARTICLE_LIST, GET_SINGLE_ARTICLE } from "./actionTypes";
 
 const fetchArticles = () => {
   return async dispatch => {
-    let response = await axios.get("/articles");
+    let response = await axios.get("http://localhost:3000/api/articles");
     return dispatch(dispatchArticleAction(response.data));
   };
 };
 
 const fetchSingleArticle = articleID => {
   return async dispatch => {
-    let response = await axios.get(`/articles/${articleID}`);
+    let response = await axios.get(`http://localhost:3000/api/articles/${articleID}`);
     return dispatch(dispatchSingleArticleAction(response.data));
   };
 };

@@ -12,7 +12,7 @@ const HeaderCategories = props => {
   }
 
   return (
-    <Menu id='article-category' pointing centered secondary style={{ backgroundColor: "white" }}>
+    <Menu id='article-category' pointing secondary style={{ backgroundColor: "white" }}>
       <Menu.Item
         name="All News"
         id=""

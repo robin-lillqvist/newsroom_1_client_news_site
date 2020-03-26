@@ -19,22 +19,20 @@ const DisplayArticles = props => {
   }
   let articleDisplay = articles.map(article => {
     return (
-      <>
-        <Grid key={article.id} align="center">
-          <Grid.Column>
-            <Image src={ThomasCar} size="medium" />
-            <Header>{article.title}</Header>
-            <p>{article.lead}</p>
-            <Button
-              id={`open-article-${article.id}`}
-              onClick={() => singleArticle(article.id)}
-              key={article.id}
-            >
-              Read more
+      <Grid key={article.id} align="center">
+        <Grid.Column>
+          <Image src={article.image} size="medium" />
+          <Header>{article.title}</Header>
+          <p>{article.lead}</p>
+          <Button
+            id={`open-article-${article.id}`}
+            onClick={() => singleArticle(article.id)}
+            key={article.id}
+          >
+            Read more
             </Button>
-          </Grid.Column>
-        </Grid>
-      </>
+        </Grid.Column>
+      </Grid>
     );
   });
 

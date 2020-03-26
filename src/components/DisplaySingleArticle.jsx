@@ -9,8 +9,8 @@ const DisplaySingleArticle = props => {
     <>
       <Image
         size="medium"
-        centered="true"
-        src="https://react.semantic-ui.com/images/wireframe/image.png"
+        // centered
+        src={article.image} // add new chore for this 
       />
       <br />
       <Container key={article.id} align="center">
