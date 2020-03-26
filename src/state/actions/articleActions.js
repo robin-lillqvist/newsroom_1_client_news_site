@@ -3,14 +3,14 @@ import { GET_ARTICLE_LIST, GET_SINGLE_ARTICLE } from "./actionTypes";
 
 const fetchArticles = () => {
   return async dispatch => {
-    let response = await axios.get("http://localhost:3000/api/articles");
+    let response = await axios.get("https://newsroom-team-1.herokuapp.com/api/articles");
     return dispatch(dispatchArticleAction(response.data));
   };
 };
 
 const fetchSingleArticle = articleID => {
   return async dispatch => {
-    let response = await axios.get(`http://localhost:3000/api/articles/${articleID}`);
+    let response = await axios.get(`https://newsroom-team-1.herokuapp.com/api/articles/${articleID}`);
     return dispatch(dispatchSingleArticleAction(response.data));
   };
 };
