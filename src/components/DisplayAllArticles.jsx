@@ -4,7 +4,6 @@ import { Grid, Header, Image, Button } from "semantic-ui-react";
 import ThomasCar from "../images/IMG_0745.JPG";
 import { fetchSingleArticle } from "../state/actions/articleActions";
 import { bindActionCreators } from "redux";
-import { Link } from "react-router-dom";
 
 const DisplayAllArticles = props => {
   const singleArticle = articleID => {

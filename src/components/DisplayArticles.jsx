@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Grid, Header, Image, Button } from "semantic-ui-react";
-import ThomasCar from "../images/IMG_0745.JPG";
 import { fetchSingleArticle } from "../state/actions/articleActions";
 import { bindActionCreators } from "redux";
 
@@ -9,13 +8,13 @@ const DisplayArticles = props => {
   const singleArticle = articleID => {
     props.fetchSingleArticle(articleID);
   };
-  let articles
+  let articles;
   if (props.categoryName) {
     articles = props.articles.filter(article => {
-      return article.category === props.categoryName && article
-    })
+      return article.category === props.categoryName && article;
+    });
   } else {
-    articles = props.articles
+    articles = props.articles;
   }
   let articleDisplay = articles.map(article => {
     return (
@@ -30,7 +29,7 @@ const DisplayArticles = props => {
             key={article.id}
           >
             Read more
-            </Button>
+          </Button>
         </Grid.Column>
       </Grid>
     );
