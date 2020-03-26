@@ -9,7 +9,7 @@ import "semantic-ui-css/semantic.min.css";
 import { BrowserRouter } from "react-router-dom";
 import axios from 'axios'
 
-axios.defaults.baseURL = "https://newsroom-team-1.herokuapp.com/";
+axios.defaults.baseURL = "https://newsroom-team-1.herokuapp.com/api";
 const store = configureStore();
 window.store = store;
 
