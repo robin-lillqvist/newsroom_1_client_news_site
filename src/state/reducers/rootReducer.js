@@ -32,6 +32,12 @@ const rootReducer = (state = initialState, action) => {
         activeItem: action.payload.activeItem
       };
 
+      case actionTypes.LOGIN_USER:
+        return {
+          ...state,
+          showLogin: true
+        }
+
     default:
       return state;
   }
