@@ -3,13 +3,13 @@ describe("Visitor can choose article by category", () => {
     cy.server();
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/articles",
+      url: "**/articles",
       response: "fixture:articles_list_response.json"
     });
     cy.visit("http://localhost:3001");
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/articles/**",
+      url: "**/articles/**",
       response: "fixture:article_details_response.json"
     });
   });
@@ -23,14 +23,15 @@ describe("Visitor can choose article by category", () => {
     cy.get("#article-list").within(() => {
       cy.get("#open-article-3").click();
     });
-    cy.get("#single-article").should("contain", "Thomas Got a New Car");
-    cy.get("#single-article").should(
+    cy.get("#single-article").within(() => {
+      cy.get("h1").should("contain", "Thomas Got a New Car");
+    cy.get("h4").should(
       "contain",
       "He bought it to comfort himself"
     );
-    cy.get("#single-article").should(
+    cy.get("p").should(
       "contain",
       "And now he wants a third car, that he found on Blocket."
-    );
+    )});
   });
 });

@@ -7,11 +7,7 @@ const DisplaySingleArticle = props => {
   let article = props.singleArticle;
   articleDetails = (
     <>
-      <Image
-        size="medium"
-        centered="true"
-        src="https://react.semantic-ui.com/images/wireframe/image.png"
-      />
+      <Image size="medium" src={article.image} />
       <br />
       <Container key={article.id} align="center">
         <Header as="h1">{article.title}</Header>
