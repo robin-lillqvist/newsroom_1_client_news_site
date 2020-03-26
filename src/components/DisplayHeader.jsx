@@ -10,7 +10,7 @@ const DisplayHeader = () => {
         <Menu.Item
           name="login"
           id="login"
-          position="right"
+          //position="right"
           onClick={() => props.dispatch({ type: LOGIN_USER })}
         >
           Login

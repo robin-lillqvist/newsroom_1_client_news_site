@@ -37,6 +37,12 @@ const rootReducer = (state = initialState, action) => {
           ...state,
           showLogin: true
         }
+      
+      case actionTypes.AUTHENTICATE:
+        return{
+          ...state,
+          ...action.payload
+        }
 
     default:
       return state;

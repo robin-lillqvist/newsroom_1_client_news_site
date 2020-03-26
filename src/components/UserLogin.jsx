@@ -1,5 +1,5 @@
 import React from 'react'
-// import { authentication } from '../modules/authentication'
+import { onLogin } from '../modules/authentication'
 import { useDispatch } from 'react-redux'
 
 const Login = () => {
@@ -7,11 +7,12 @@ const Login = () => {
 
   let login
   login =
-    <form onSubmit={event => onLogin(event, dispatch)}>
-      <input name="email" placeholder="Email" />
-      <input name="password" type="password" placeholder="Password" />
-      <input type="submit" value="Login using hooks" />
+    <form id="login-form" onSubmit={event => onLogin(event, dispatch)}>
+      <input id="email" name="email" placeholder="Email" />
+      <input id="password" name="password" type="password" placeholder="Password" />
+      <input id="login-button" type="submit" value="Login" />
     </form>
+    
 
   return (
     login
