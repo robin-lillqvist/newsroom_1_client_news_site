@@ -12,7 +12,7 @@ const DisplayAllArticles = props => {
   let articleDisplay = props.articles.map(article => {
     return (
       <>
-        <Grid key={article.id} align="center">
+        <Grid id={`article-${article.id}`} key={article.id} align="center">
           <Grid.Column>
             <Image src={ThomasCar} size="medium" />
             <Header>{article.title}</Header>
