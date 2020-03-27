@@ -1,16 +1,16 @@
 import React from "react";
 import { Menu, Segment, Icon } from "semantic-ui-react";
-import { Login } from './UserLogin'
+import { LOGIN_USER } from "../state/actions/actionTypes";
+import { connect } from "react-redux";
 
-const DisplayHeader = () => {
 
+const DisplayHeader = props => {
   return (
     <Segment inverted>
-      <Menu inverted pointing secondary >
+      <Menu inverted pointing secondary id="main-header">
         <Menu.Item
           name="login"
           id="login"
-          //position="right"
           onClick={() => props.dispatch({ type: LOGIN_USER })}
         >
           Login
@@ -27,4 +27,4 @@ const DisplayHeader = () => {
   );
 };
 
-export default DisplayHeader;
+export default connect() (DisplayHeader);

@@ -5,7 +5,11 @@ const initialState = {
   categoryName: "",
   showArticlesByCategory: false,
   activeItem: "all",
-  showlogin: false
+  showLogin: false,
+  authenticate: false,
+  userEmail: undefined,
+  auth: {},
+  message: ""
 };
 
 export default initialState;
