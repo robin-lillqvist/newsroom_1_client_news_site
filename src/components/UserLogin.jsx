@@ -2,12 +2,13 @@ import React from 'react'
 import { onLogin, onLogout } from '../modules/authentication'
 import { useDispatch, useSelector } from 'react-redux'
 
-const Login = () => {
+const Login = props => {
   const dispatch = useDispatch()
   const authenticated = useSelector(state => state.auth.authenticated)
 
   let login
   if (authenticated) {
+    <h3>{props.message}</h3>
     login =
       <button onClick={() => onLogout(dispatch)}>
         Logout
@@ -23,10 +24,4 @@ const Login = () => {
   return login
 }
 
-// const DisplayMessage = props => {
-// 	return (
-// 		<h3>{props.message}</h3>
-// 	)
-// }
-
-export default {Login};
+export default Login;

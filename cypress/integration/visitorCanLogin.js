@@ -1,29 +1,49 @@
 describe("User can login", () => {
   beforeEach(() => {
-    cy.server()
-    cy.visit("**/")
-  })
-  it("Sucessfully", () => {
+    cy.server();
+    cy.route({
+      method: "GET",
+      url: "http://localhost:3000/api/articles",
+      response: "fixture:articles_list_response.json"
+    });
+    cy.visit("http://localhost:3001");
     cy.route({
       method: "POST",
-      url: "**/auth/sign_in",
+      url: "http://localhost:3000/api/auth/sign_in",
       response: "fixture:login.json",
-      headers: {
-        uid: "user@mail.com"
-      },
       success: true
-    })
+    });
+    cy.route({
+      method: "GET",
+      url: "http://localhost:3000/api/auth/sign_in",
+      response: "fixture:login.json",
+      success: true
+    });
+  });
+
+  it("Sucessfully", () => {
     cy.get("#main-header").within(() => {
       cy.get("#login").click();
     });
     cy.get("#login-form").within(() => {
-      cy.get("#email").type("user@mail.com")
-      cy.get("#password").type("password")
-      cy.get("#login-button").contains("Login").click()
-    })
-    cy.get("#message").should("contain", "Wassup user@mail.com")
-  })
-  it("With invalid credentials", () => {
+      cy.get("#email").type("user@mail.com");
+      cy.get("#password").type("password");
+      cy.get("#login-button")
+        .contains("Login")
+        .click();
+    });
+    cy.get("#message").should("contain", "Wassup user@mail.com");
+  });
+});
+
+describe("User can login", () => {
+  beforeEach(() => {
+    cy.server();
+    cy.route({
+      method: "GET",
+      url: "http://localhost:3000/api/articles",
+      response: "fixture:articles_list_response.json"
+    });
     cy.route({
       method: "POST",
       url: "**/auth/sign_in",
@@ -32,13 +52,21 @@ describe("User can login", () => {
         errors: ["Invalid login credentials. Please try again."],
         success: false
       }
-    })
-    cy.get("#login").click()
+    });
+  });
+  cy.visit("http://localhost:3001");
+  it("With invalid credentials", () => {
+    cy.get("#login").click();
     cy.get("#login-form").within(() => {
-      cy.get("#email").type("user@mail.com")
-      cy.get("#password").type("wrong")
-      cy.get("#login-button").contains("Login").click()
-    })
-    cy.get("#message").should("contain", "Invalid login credentials. Please try again.")
-  })
-})
+      cy.get("#email").type("user@mail.com");
+      cy.get("#password").type("wrong");
+      cy.get("#login-button")
+        .contains("Login")
+        .click();
+    });
+    cy.get("#login").should(
+      "contain",
+      "Invalid login credentials. Please try again."
+    );
+  });
+});
