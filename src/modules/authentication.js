@@ -11,8 +11,9 @@ const onLogin = (event, dispatch) => {
   auth.signIn(event.target.elements.email.value, event.target.elements.password.value)
     .then(response => {
       dispatch({ type: 'AUTHENTICATE', payload: { authenticated: true, userEmail: response.data.email } })
-      dispatch({ type: 'GREETING', payload: `Welcome ${response.data.email}` })
+      // dispatch({ type: 'GREETING', payload: `Welcome ${response.data.email}` })
     })
+    
     // .catch(error => {
     //   let errorMessage = error.response.data.errors[0]
     //   dispatch({ type: 'GREETING', payload: errorMessage })
@@ -22,7 +23,7 @@ const onLogin = (event, dispatch) => {
 const onLogout = (dispatch) => {
   auth.signOut().then(() => {
     dispatch({ type: 'AUTHENTICATE', payload: { authenticated: false, userEmail: null } })
-    dispatch({ type: 'GREETING', payload: `See ya!` })
+    dispatch({ type: 'GREETING', payload: 'See ya!' })
   })
 }
 

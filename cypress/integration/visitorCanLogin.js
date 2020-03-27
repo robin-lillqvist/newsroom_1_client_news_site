@@ -6,20 +6,21 @@ describe("User can login", () => {
       url: "http://localhost:3000/api/articles",
       response: "fixture:articles_list_response.json"
     });
-    cy.visit("http://localhost:3001");
     cy.route({
       method: "POST",
-      url: "http://localhost:3000/api/auth/sign_in",
+      url: "http://localhost:3000/api/**",
       response: "fixture:login.json",
-      success: true
+      // success: true
     });
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/auth/sign_in",
+      url: "http://localhost:3000/api/auth/**",
       response: "fixture:login.json",
-      success: true
+      // success: true
     });
+    cy.visit("http://localhost:3001");
   });
+  
 
   it("Sucessfully", () => {
     cy.get("#main-header").within(() => {
@@ -53,8 +54,9 @@ describe("User can login", () => {
         success: false
       }
     });
+    cy.visit("http://localhost:3001");
   });
-  cy.visit("http://localhost:3001");
+  
   it("With invalid credentials", () => {
     cy.get("#login").click();
     cy.get("#login-form").within(() => {
@@ -64,7 +66,7 @@ describe("User can login", () => {
         .contains("Login")
         .click();
     });
-    cy.get("#login").should(
+    cy.get("#message").should(
       "contain",
       "Invalid login credentials. Please try again."
     );

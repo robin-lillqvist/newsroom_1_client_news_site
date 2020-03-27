@@ -8,11 +8,16 @@ const Login = props => {
 
   let login
   if (authenticated) {
-    <h3>{props.message}</h3>
     login =
+    (<>
+      <p id="message">{props.message}</p>
       <button onClick={() => onLogout(dispatch)}>
         Logout
       </button>
+      </>
+    )
+
+    
   } else {
     login =
       <form id="login-form" onSubmit={event => onLogin(event, dispatch)}>
