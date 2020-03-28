@@ -11,7 +11,7 @@ const DisplaySingleArticle = props => {
   let article = props.singleArticle;
   let premiumMessage = "";
 
-  if (premiumUser == false && articlePremium == true) {
+  if (premiumUser === false && articlePremium === true) {
     article.content = article.content.substring(0, 200) + "...";
     premiumMessage = (
       <p id="premium-message">
