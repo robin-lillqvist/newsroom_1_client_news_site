@@ -15,7 +15,7 @@ const onLogin = (event, dispatch) => {
     .then(response => {
       dispatch({
         type: "AUTHENTICATE",
-        payload: { authenticated: true, userEmail: response.data.email }
+        payload: { authenticated: true, userEmail: response.data.email, premiumUser:response.data.premium_user }
       });
       dispatch({ type: "GREETING", payload: `Welcome ${response.data.email}` });
     })

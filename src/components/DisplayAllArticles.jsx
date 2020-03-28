@@ -9,24 +9,23 @@ const DisplayAllArticles = props => {
   const singleArticle = articleID => {
     props.fetchSingleArticle(articleID);
   };
+
   let articleDisplay = props.articles.map(article => {
     return (
-      <>
+      <div id={`article-${article.id}`}>
         <Grid key={article.id} align="center">
-          <Grid.Column>
-            <Image src={ThomasCar} size="medium" />
-            <Header>{article.title}</Header>
-            <p>{article.lead}</p>
-            <Button
-              id={`open-article-${article.id}`}
-              onClick={() => singleArticle(article.id)}
-              key={article.id}
-            >
-              Read more
-            </Button>
-          </Grid.Column>
+          <Image src={ThomasCar} size="medium" />
+          <Header>{article.title}</Header>
+          <p>{article.lead}</p>
+          <Button
+            id={`open-article-${article.id}`}
+            onClick={() => singleArticle(article.id)}
+            key={article.id}
+          >
+            Read more
+          </Button>
         </Grid>
-      </>
+      </div>
     );
   });
 
