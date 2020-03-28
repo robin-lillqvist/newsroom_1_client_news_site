@@ -2,16 +2,15 @@ import React from "react";
 import { Menu, Segment, Icon } from "semantic-ui-react";
 import { LOGIN_USER } from "../state/actions/actionTypes";
 import { connect } from "react-redux";
-import { useSelector } from 'react-redux'
-
+import { useSelector } from "react-redux";
 
 const DisplayHeader = props => {
-  const authenticated = useSelector(state => state.authenticated)
-let name
-  if (authenticated){
-    name="Logout"
+  const authenticated = useSelector(state => state.authenticated);
+  let name;
+  if (authenticated) {
+    name = "Logout";
   } else {
-    name="Login"
+    name = "Login";
   }
 
   return (
@@ -24,11 +23,7 @@ let name
         >
           {name}
         </Menu.Item>
-        <Menu.Item
-          name="main-header"
-          id="main-header"
-          position="right"
-        >
+        <Menu.Item name="main-header" id="main-header" position="right">
           <Icon name="sidebar" size="large"></Icon>
         </Menu.Item>
       </Menu>
@@ -36,4 +31,4 @@ let name
   );
 };
 
-export default connect() (DisplayHeader);
+export default connect()(DisplayHeader);

@@ -9,18 +9,15 @@ describe("User can login", () => {
     cy.route({
       method: "POST",
       url: "**/**",
-      response: "fixture:login.json",
-      // success: true
+      response: "fixture:login.json"
     });
     cy.route({
       method: "GET",
       url: "**/auth/**",
-      response: "fixture:login.json",
-      // success: true
+      response: "fixture:login.json"
     });
     cy.visit("http://localhost:3001");
   });
-  
 
   it("Sucessfully", () => {
     cy.get("#main-header").within(() => {
@@ -56,7 +53,7 @@ describe("User can login", () => {
     });
     cy.visit("http://localhost:3001");
   });
-  
+
   it("With invalid credentials", () => {
     cy.get("#login").click();
     cy.get("#login-form").within(() => {
