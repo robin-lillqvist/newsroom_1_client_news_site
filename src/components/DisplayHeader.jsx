@@ -2,9 +2,18 @@ import React from "react";
 import { Menu, Segment, Icon } from "semantic-ui-react";
 import { LOGIN_USER } from "../state/actions/actionTypes";
 import { connect } from "react-redux";
+import { useSelector } from 'react-redux'
 
 
 const DisplayHeader = props => {
+  const authenticated = useSelector(state => state.authenticated)
+let name
+  if (authenticated){
+    name="Logout"
+  } else {
+    name="Login"
+  }
+
   return (
     <Segment inverted>
       <Menu inverted pointing secondary id="main-header">
@@ -13,7 +22,7 @@ const DisplayHeader = props => {
           id="login"
           onClick={() => props.dispatch({ type: LOGIN_USER })}
         >
-          Login
+          {name}
         </Menu.Item>
         <Menu.Item
           name="main-header"

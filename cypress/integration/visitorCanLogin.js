@@ -3,18 +3,18 @@ describe("User can login", () => {
     cy.server();
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/articles",
+      url: "**/articles",
       response: "fixture:articles_list_response.json"
     });
     cy.route({
       method: "POST",
-      url: "http://localhost:3000/api/**",
+      url: "**/**",
       response: "fixture:login.json",
       // success: true
     });
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/auth/**",
+      url: "**/auth/**",
       response: "fixture:login.json",
       // success: true
     });
@@ -42,7 +42,7 @@ describe("User can login", () => {
     cy.server();
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/articles",
+      url: "**/articles",
       response: "fixture:articles_list_response.json"
     });
     cy.route({

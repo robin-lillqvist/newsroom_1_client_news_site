@@ -43,7 +43,8 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         showLogin: false,
-        showArticlesList: true
+        showArticlesList: true,
+        message: ""
       }
     case actionTypes.GREETING:
       return {

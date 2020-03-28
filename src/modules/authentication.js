@@ -1,7 +1,7 @@
 import JtockAuth from "j-tockauth";
 
 const auth = new JtockAuth({
-  host: "http://localhost:3000",
+  host: "https://newsroom-team-1.herokuapp.com/",
   prefixUrl: "/api"
 });
 
@@ -14,7 +14,6 @@ const onLogin = (event, dispatch) => {
     })
     
     .catch(error => {
-      debugger
       let errorMessage = error.response.data.errors[0]
       dispatch({ type: 'GREETING', payload: errorMessage })
     });

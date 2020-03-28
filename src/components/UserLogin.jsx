@@ -7,7 +7,6 @@ const Login = props => {
   const dispatch = useDispatch()
   const authenticated = useSelector(state => state.authenticated)
   const message = useSelector(state => state.message)
-  const showLogin = useSelector(state => state.showLogin)
 
   let login
   if (authenticated) {
