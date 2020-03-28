@@ -5,13 +5,13 @@ import { Button, Header, Icon, Image, Container } from 'semantic-ui-react'
 const DisplaySingleArticle = props => {
   let articleDetails
   let premium_user = false
-  let articlepremium = true
+  let articlepremium = props.singleArticle.premium
   let article = props.singleArticle
   let premium_message = ''
 
-  if (!premium_user && articlepremium) {
+  if (!premium_user && articlepremium == true) {
     article.content = article.content.substring(0, 200) + '...'
-    premium_message = (<p id="premium_message"><a href="">This article require a premium membership.</a></p>)
+    premium_message = (<p id="premium_message"><a href="">This article requires a premium membership.</a></p>)
   }
 
   articleDetails = (
