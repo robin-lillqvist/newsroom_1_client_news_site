@@ -3,9 +3,8 @@ import { connect } from "react-redux";
 import { useSelector } from "react-redux";
 import { Button, Header, Icon, Image, Container } from "semantic-ui-react";
 
-
 const DisplaySingleArticle = props => {
-  const premiumUser = useSelector(state => state.premiumUser)
+  const premiumUser = useSelector(state => state.premiumUser);
   let articleDetails;
   let articlePremium = props.singleArticle.premium;
   let article = props.singleArticle;

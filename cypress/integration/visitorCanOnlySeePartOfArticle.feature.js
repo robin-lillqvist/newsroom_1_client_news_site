@@ -5,7 +5,7 @@ describe("Free Article view:", () => {
       method: "GET",
       url: "**/articles",
       response: "fixture:articles_list_response.json"
-    });   
+    });
     cy.route({
       method: "GET",
       url: "**/articles/3",
@@ -23,8 +23,14 @@ describe("Free Article view:", () => {
     cy.get("#open-article-3").click();
     cy.get("#article-3").within(() => {
       cy.get("#article-title").should("contain", "Thomas Got a New Car");
-      cy.get("#article-lead").should("contain", "He bought it to comfort himself");
-      cy.get("#article-content").should("contain", "And now he wants a third car, that he found on Blocket.");
+      cy.get("#article-lead").should(
+        "contain",
+        "He bought it to comfort himself"
+      );
+      cy.get("#article-content").should(
+        "contain",
+        "And now he wants a third car, that he found on Blocket."
+      );
     });
     cy.get("#article-3")
       .should("not.contain", "...")
@@ -36,10 +42,15 @@ describe("Free Article view:", () => {
     cy.get("#article-2").within(() => {
       cy.get("#article-title").should("contain", "Coronavirus in Sweden");
       cy.get("#article-lead").should("contain", "We are all in quarentine");
-      cy.get("#article-content").should("contain", "And now he wants a third car, that he found on Blocket.");
-      cy.get("#article-content").should("contain", "...")
-      cy.get("#premium-message").and("contain", "This article requires a premium membership.");
+      cy.get("#article-content").should(
+        "contain",
+        "And now he wants a third car, that he found on Blocket."
+      );
+      cy.get("#article-content").should("contain", "...");
+      cy.get("#premium-message").and(
+        "contain",
+        "This article requires a premium membership."
+      );
     });
-   
   });
 });
