@@ -1,11 +1,13 @@
 import React from 'react'
 import { onLogin, onLogout } from '../modules/authentication'
 import { useDispatch, useSelector } from 'react-redux'
+import { Header, Modal, Button } from 'semantic-ui-react'
 
 const Login = props => {
   const dispatch = useDispatch()
   const authenticated = useSelector(state => state.authenticated)
   const message = useSelector(state => state.message)
+  const showLogin = useSelector(state => state.showLogin)
 
   let login
   if (authenticated) {
@@ -23,10 +25,20 @@ const Login = props => {
       </form>
   }
   return (
-    <>
+    <Modal open={true}>
+      <Header icon='sign-in' content='Login'/>
+      <Modal.Content>
       {message && <p id="message">{message}</p>}
       {login}
-    </>
+      </Modal.Content>
+      <Modal.Actions>
+        <Button 
+          onClick={() => dispatch({ type: "CLOSE_LOGIN" })}
+        >
+          Close
+        </Button>
+      </Modal.Actions>
+      </Modal> 
   )
 }
 

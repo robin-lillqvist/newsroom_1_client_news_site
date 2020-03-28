@@ -39,6 +39,12 @@ const rootReducer = (state = initialState, action) => {
         showArticlesList: false,
         singleArticle: undefined
       };
+    case actionTypes.CLOSE_LOGIN:
+      return {
+        ...state,
+        showLogin: false,
+        showArticlesList: true
+      }
     case actionTypes.GREETING:
       return {
         ...state,
