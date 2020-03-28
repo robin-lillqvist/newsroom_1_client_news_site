@@ -5,7 +5,7 @@ describe("Free Article view:", () => {
       method: "GET",
       url: "**/articles",
       response: "fixture:articles_list_response.json"
-    });
+    });   
     cy.route({
       method: "GET",
       url: "**/articles/3",
@@ -38,7 +38,7 @@ describe("Free Article view:", () => {
       cy.get("#article-lead").should("contain", "We are all in quarentine");
       cy.get("#article-content").should("contain", "And now he wants a third car, that he found on Blocket.");
       cy.get("#article-content").should("contain", "...")
-      cy.get("#premium_message").and("contain", "This article requires a premium membership.");
+      cy.get("#premium-message").and("contain", "This article requires a premium membership.");
     });
    
   });

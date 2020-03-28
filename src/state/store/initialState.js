@@ -8,7 +8,8 @@ const initialState = {
   showLogin: false,
   authenticate: false,
   userEmail: undefined,
-  message: ""
+  message: "",
+  premiumUser: false
 };
 
 export default initialState;
