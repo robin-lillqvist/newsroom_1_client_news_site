@@ -2,7 +2,7 @@ import JtockAuth from "j-tockauth";
 
 const auth = new JtockAuth({
   host: "http://localhost:3000",
-  prefixUrl: "/api/auth/sign_in"
+  prefixUrl: "/api"
 });
 
 const onLogin = (event, dispatch) => {
@@ -14,6 +14,7 @@ const onLogin = (event, dispatch) => {
     })
     
     .catch(error => {
+      debugger
       let errorMessage = error.response.data.errors[0]
       dispatch({ type: 'GREETING', payload: errorMessage })
     });
