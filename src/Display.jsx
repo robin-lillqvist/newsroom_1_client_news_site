@@ -4,6 +4,7 @@ import DisplayArticles from "./components/DisplayArticles";
 import { fetchArticles } from "./state/actions/articleActions";
 import { bindActionCreators } from "redux";
 import DisplaySingleArticle from "./components/DisplaySingleArticle";
+import Login from './components/UserLogin'
 
 const Display = props => {
   props.fetchArticles()
@@ -11,6 +12,7 @@ const Display = props => {
     <>
       {props.showArticlesList && <DisplayArticles />}
       {props.singleArticle && <DisplaySingleArticle />}
+      {props.showLogin && <Login/>}
     </>
   );
 };
@@ -24,7 +26,8 @@ const mapStateToProps = state => {
   return {
     showArticlesList: state.showArticlesList,
     singleArticle: state.singleArticle,
-    showArticlesByCategory: state.showArticlesByCategory
+    showArticlesByCategory: state.showArticlesByCategory,
+    showLogin: state.showLogin,
   };
 };
 

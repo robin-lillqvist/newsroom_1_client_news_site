@@ -3,7 +3,7 @@ describe("Visitor can", () => {
     cy.server();
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/articles",
+      url: "**/articles",
       response: "fixture:articles_list_response.json"
     });
     cy.visit("http://localhost:3001");
