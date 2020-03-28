@@ -33,7 +33,7 @@ describe("User can login", () => {
         .contains("Login")
         .click();
     });
-    cy.get("#message").should("contain", "Wassup user@mail.com");
+    cy.get("#message").should("contain", "Welcome user@mail.com");
   });
 });
 

@@ -4,20 +4,16 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const Login = props => {
   const dispatch = useDispatch()
-  const authenticated = useSelector(state => state.auth.authenticated)
+  const authenticated = useSelector(state => state.authenticated)
+  const message = useSelector(state => state.message)
 
   let login
   if (authenticated) {
     login =
-    (<>
-      <p id="message">{props.message}</p>
       <button onClick={() => onLogout(dispatch)}>
         Logout
       </button>
-      </>
-    )
 
-    
   } else {
     login =
       <form id="login-form" onSubmit={event => onLogin(event, dispatch)}>
@@ -26,7 +22,12 @@ const Login = props => {
         <input id="login-button" type="submit" value="Login" />
       </form>
   }
-  return login
+  return (
+    <>
+      {message && <p id="message">{message}</p>}
+      {login}
+    </>
+  )
 }
 
 export default Login;

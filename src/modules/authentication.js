@@ -7,17 +7,16 @@ const auth = new JtockAuth({
 
 const onLogin = (event, dispatch) => {
   event.preventDefault()
-  debugger
   auth.signIn(event.target.elements.email.value, event.target.elements.password.value)
     .then(response => {
       dispatch({ type: 'AUTHENTICATE', payload: { authenticated: true, userEmail: response.data.email } })
-      // dispatch({ type: 'GREETING', payload: `Welcome ${response.data.email}` })
+      dispatch({ type: 'GREETING', payload: `Welcome ${response.data.email}` })
     })
     
-    // .catch(error => {
-    //   let errorMessage = error.response.data.errors[0]
-    //   dispatch({ type: 'GREETING', payload: errorMessage })
-    // });
+    .catch(error => {
+      let errorMessage = error.response.data.errors[0]
+      dispatch({ type: 'GREETING', payload: errorMessage })
+    });
 }
 
 const onLogout = (dispatch) => {
@@ -27,5 +26,5 @@ const onLogout = (dispatch) => {
   })
 }
 
-export { auth, onLogin, onLogout };
+export { onLogin, onLogout };
 
