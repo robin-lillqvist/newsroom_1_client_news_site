@@ -1,17 +1,17 @@
 import React from "react";
 import { Header, Modal, Form, Button, Label } from "semantic-ui-react";
 import { CardNumberElement, CardExpiryElement, CardCVCElement, injectStripe } from "react-stripe-elements";
-
+import axios from 'axios'
 const SubscriptionForm = props => {
   const submitPayment = async (event) => {
     event.preventDefault()
     let stripeResponse = await props.stripe.createToken()
     let token = stripeResponse.token.id
-debugger
     let paymentStatus = await axios.post('**/subscriptions', { stripeToken: token})
-    if (paymentStatus === 'paid')
+    if (paymentStatus.data.status  === 'paid')
+    props.dispatch({type: 'FLASH_MESSAGE', payload: {flashMessage: 'Thank you for your business!'}})
   }
-  return (
+    return (
     // <Modal trigger={<Button>Make Payment</Button>} closeIcon>
     //   <Header content="Subscription Form" />
     //   <Modal.Content>

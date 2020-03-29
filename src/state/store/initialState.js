@@ -9,7 +9,8 @@ const initialState = {
   authenticate: false,
   userEmail: undefined,
   message: "",
-  premiumUser: false
+  premiumUser: false,
+  flashMessage: ''
 };
 
 export default initialState;

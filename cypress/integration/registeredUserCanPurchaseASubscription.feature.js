@@ -16,6 +16,11 @@ describe("registered user can purchase a subscription", () => {
       url: "**/articles/2",
       response: "fixture:specific_article_2.json"
     });
+    cy.route({
+        method: 'POST', 
+        url: "**/subscriptions",
+        response: {status: 'paid' }
+    })
     cy.visit("/");
     cy.get("#open-article-2").click();
   });

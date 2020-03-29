@@ -12,6 +12,7 @@ const Display = props => {
   props.fetchArticles()
   return (
     <>
+      {props.flashMessage.length > 0 && <h2>{props.flashMessage}</h2>}
       {props.showArticlesList && <DisplayArticles />}
       {props.singleArticle && <DisplaySingleArticle />}
       {props.showLogin && <Login/>}
@@ -31,7 +32,8 @@ const mapStateToProps = state => {
     singleArticle: state.singleArticle,
     showArticlesByCategory: state.showArticlesByCategory,
     showLogin: state.showLogin,
-    showSubscription: state.showSubscription
+    showSubscription: state.showSubscription,
+    flashMessage: state.flashMessage
   };
 };
 
