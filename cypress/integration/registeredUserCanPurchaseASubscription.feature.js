@@ -20,8 +20,8 @@ describe ('registered user can purchase a subscription', () => {
         cy.get("#open-article-2").click();
     });
 
-    it('by clicking buy subscription', () =>{
+    it('by clicking buy subscription', () => {
         cy.get('button').contains('Buy Subscription').click()
+        cy.get("form[id='subscription-form']").should('be.visible')
     })
-
 })

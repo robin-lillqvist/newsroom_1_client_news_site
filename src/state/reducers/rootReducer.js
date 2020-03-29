@@ -57,6 +57,14 @@ const rootReducer = (state = initialState, action) => {
         ...action.payload
       };
 
+    case actionTypes.SHOW_SUBSCRIPTION:
+      return {
+        ...state,
+        ...action.payload,
+        singleArticle: undefined,
+        showArticlesList: false
+      };
+
     default:
       return state;
   }
