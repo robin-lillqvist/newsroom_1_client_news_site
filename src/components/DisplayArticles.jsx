@@ -18,7 +18,7 @@ const DisplayArticles = props => {
   }
   let articleDisplay = articles.map(article => {
     return (
-      <Grid key={article.id} align="center">
+      <Grid key={article.id} id={`article-${article.id}`} align="center">
         <Grid.Column>
           <Image src={article.image} size="medium" />
           <Header>{article.title}</Header>
