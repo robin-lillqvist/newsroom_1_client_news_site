@@ -30,7 +30,7 @@ const onLogout = dispatch => {
   auth.signOut().then(() => {
     dispatch({
       type: "AUTHENTICATE",
-      payload: { authenticated: false, userEmail: null }
+      payload: { authenticated: false, userEmail: null, premiumUser: false }
     });
     dispatch({ type: "GREETING", payload: "See ya!" });
   });
