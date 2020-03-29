@@ -1,30 +1,32 @@
 import React from "react";
-import { Header, Modal, Form, Button } from "semantic-ui-react";
+import { Header, Modal, Form, Button, Label } from "semantic-ui-react";
+import {
+  CardNumberElement,
+  CardExpiryElement,
+  CardCVCElement,
+  injectStripe
+} from "react-stripe-elements";
 
 const SubscriptionForm = () => {
-  
   return (
     <Modal trigger={<Button>Make Payment</Button>} closeIcon>
       <Header content="Subscription Form" />
       <Modal.Content>
         <Form id="subscription-form">
-            <Form.Field>
-            <input placeholder='Name on Card' />
-            </Form.Field>
-            <Form.Field>
-            <input placeholder='Card Number' />
-            </Form.Field>
-            <Form.Field>
-            <input placeholder='CVC' />
-            </Form.Field>
-            <Form.Field>
-            <input placeholder='Billing Address' />
-            </Form.Field>
-            <Button positive>Confirm Subscription</Button>
+          <Label pointing="bottom">Please enter Card Number</Label>
+          <CardNumberElement />
+
+          <Label pointing="bottom">Please enter Expiration Date</Label>
+          <CardExpiryElement />
+
+          <Label pointing="bottom">Please enter CVC</Label>
+          <CardCVCElement />
+
+          <Button positive>Confirm Subscription</Button>
         </Form>
       </Modal.Content>
     </Modal>
   );
 };
 
-export default SubscriptionForm;
+export default injectStripe(SubscriptionForm);
