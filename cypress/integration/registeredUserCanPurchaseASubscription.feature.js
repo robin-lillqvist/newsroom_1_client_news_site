@@ -22,6 +22,7 @@ describe ('registered user can purchase a subscription', () => {
 
     it('by clicking buy subscription', () => {
         cy.get('button').contains('Buy Subscription').click()
+        cy.get('button').contains('Make Payment').click()
         cy.get("form[id='subscription-form']").should('be.visible')
     })
 })
