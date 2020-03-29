@@ -1,11 +1,6 @@
 import React from "react";
 import { Header, Modal, Form, Button, Label } from "semantic-ui-react";
-import {
-  CardNumberElement,
-  CardExpiryElement,
-  CardCVCElement,
-  injectStripe
-} from "react-stripe-elements";
+import { CardNumberElement, CardExpiryElement, CardCVCElement, injectStripe } from "react-stripe-elements";
 
 const SubscriptionForm = () => {
   return (
@@ -14,7 +9,7 @@ const SubscriptionForm = () => {
       <Modal.Content>
         <Form id="subscription-form">
           <Label pointing="bottom">Please enter Card Number</Label>
-          <CardNumberElement />
+          <CardNumberElement id="cne"/>
 
           <Label pointing="bottom">Please enter Expiration Date</Label>
           <CardExpiryElement />
