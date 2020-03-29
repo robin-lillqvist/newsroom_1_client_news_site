@@ -6,7 +6,10 @@ const SubscriptionForm = props => {
   const submitPayment = async (event) => {
     event.preventDefault()
     let stripeResponse = await props.stripe.createToken()
+    let token = stripeResponse.token.id
 debugger
+    let paymentStatus = await axios.post('**/subscriptions', { stripeToken: token})
+    if (paymentStatus === 'paid')
   }
   return (
     // <Modal trigger={<Button>Make Payment</Button>} closeIcon>
