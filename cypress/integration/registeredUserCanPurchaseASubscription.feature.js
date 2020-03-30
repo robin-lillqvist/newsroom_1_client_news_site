@@ -21,11 +21,32 @@ describe("registered user can purchase a subscription", () => {
         url: "**/subscriptions",
         response: {status: 'paid' }
     })
+    cy.route({
+      method: "POST",
+      url: "**/**",
+      response: "fixture:login.json"
+    });
+    cy.route({
+      method: "GET",
+      url: "**/auth/**",
+      response: "fixture:login.json"
+    });
     cy.visit("/");
-    cy.get("#open-article-2").click();
   });
 
   it("by clicking buy subscription", () => {
+    cy.get("#main-header").within(() => {
+      cy.get("#login").click();
+    });
+    cy.get("#login-form").within(() => {
+      cy.get("#email").type("user@mail.com");
+      cy.get("#password").type("password");
+      cy.get("#login-button")
+        .contains("Login")
+        .click();
+    });
+    cy.get("#close-button").click();
+    cy.get("#open-article-2").click();
     cy.get("button")
       .contains("Buy Subscription")
       .click();
@@ -54,5 +75,8 @@ describe("registered user can purchase a subscription", () => {
       .contains("Submit Payment")
       .click();
     // cy.get("button").contains("Back to article").click();
+    //cy.wait('@purchase')
+    //cy.get('h2[id="message"]').should('contain', "Thank you for your business!")
+    cy.get('#subscription-message').should('contain', "Thank you for your business!")
   });
 });

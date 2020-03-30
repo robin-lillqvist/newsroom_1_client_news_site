@@ -33,7 +33,7 @@ const Login = () => {
         {login}
       </Modal.Content>
       <Modal.Actions>
-        <Button onClick={() => dispatch({ type: "CLOSE_LOGIN" })}>Close</Button>
+        <Button id="close-button" onClick={() => dispatch({ type: "CLOSE_LOGIN" })}>Close</Button>
       </Modal.Actions>
     </Modal>
   );
