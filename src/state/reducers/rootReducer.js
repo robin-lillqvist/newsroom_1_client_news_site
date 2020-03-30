@@ -13,14 +13,16 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         singleArticle: action.payload,
-        showArticlesList: false
+        showArticlesList: false,
+        showSingleArticle: true
       };
 
     case actionTypes.BACK_TO_ARTICLE_LIST:
       return {
         ...state,
         showArticlesList: true,
-        singleArticle: undefined
+        singleArticle: undefined,
+        showSingleArticle: false
       };
 
     case actionTypes.CATEGORY_SELECTION:
@@ -28,6 +30,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         categoryName: action.payload.categoryName,
         singleArticle: undefined,
+        showSingleArticle: false,
         showArticlesList: true,
         activeItem: action.payload.activeItem
       };
@@ -61,7 +64,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         ...action.payload,
-        singleArticle: undefined,
+        showSingleArticle: false,
         showArticlesList: false
       };
 
@@ -69,6 +72,13 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         ...action.payload 
+      }
+
+    case actionTypes.BACK_TO_ARTICLE:
+      return {
+        ...state,
+        showSubscription: false,
+        showSingleArticle: true
       }
 
     default:

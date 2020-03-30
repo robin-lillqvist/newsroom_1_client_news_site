@@ -44,26 +44,31 @@ const SubscriptionForm = props => {
     //     </Form>
     //   </Modal.Content>
     // </Modal>
-
-    <Form id="payment-form">
-      <Header textAlign="center" level="4">
-        Payment Form
-      </Header>
-      <label>Card number:</label>
-      <CardNumberElement />
-      <label>Expiry date:</label>
-      <CardExpiryElement />
-      <label>CVC:</label>
-      <CardCVCElement />
-      <Button
-        margin="xsmall"
-        onClick={event => {
-          submitPayment(event);
-        }}
-      >
-        Submit Payment
-      </Button>
-    </Form>
+    <>  
+      <Form id="payment-form">
+        <Header textAlign="center" level="4">
+          Payment Form
+        </Header>
+        <label>Card number:</label>
+        <CardNumberElement />
+        <label>Expiry date:</label>
+        <CardExpiryElement />
+        <label>CVC:</label>
+        <CardCVCElement />
+        <Button
+          margin="xsmall"
+          onClick={event => {
+            submitPayment(event);
+          }}
+        >
+          Submit Payment
+        </Button>
+      </Form>
+     
+    <Button onClick={ () => props.dispatch({type: 'BACK_TO_ARTICLE'})}>
+      Back to article
+    </Button>
+  </>
   );
 };
 
