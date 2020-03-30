@@ -23,9 +23,11 @@ const SubscriptionForm = props => {
     if (paymentStatus.data.status === "paid")
       dispatch({
         type: "FLASH_MESSAGE",
-        payload: { flashMessage: "Thank you for your business!", showSubscription:false, currentUser: { email: userEmail, premiumUser: true } }
+        payload: { flashMessage: "Thank you for your business!", showArticlesList:true, showSubscription:false, premiumUser:true },
       });
+
   };
+
   return (
     // <Modal trigger={<Button>Make Payment</Button>} closeIcon>
     //   <Header content="Subscription Form" />
@@ -67,9 +69,9 @@ const SubscriptionForm = props => {
         </Button>
       </Form>
      
-    <Button onClick={ () => dispatch({type: 'BACK_TO_ARTICLE'})}>
+    {/* <Button onClick={ () => dispatch({type: 'BACK_TO_ARTICLE'})}>
       Back to article
-    </Button>
+    </Button> */}
   </>
   );
 };

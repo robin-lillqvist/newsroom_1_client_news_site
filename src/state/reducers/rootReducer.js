@@ -14,7 +14,8 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         singleArticle: action.payload,
         showArticlesList: false,
-        showSingleArticle: true
+        showSingleArticle: true,
+        flashMessage: undefined
       };
 
     case actionTypes.BACK_TO_ARTICLE_LIST:
@@ -22,7 +23,6 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         showArticlesList: true,
         singleArticle: undefined,
-        showSingleArticle: false
       };
 
     case actionTypes.CATEGORY_SELECTION:
@@ -30,9 +30,9 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         categoryName: action.payload.categoryName,
         singleArticle: undefined,
-        showSingleArticle: false,
         showArticlesList: true,
-        activeItem: action.payload.activeItem
+        activeItem: action.payload.activeItem,
+        flashMessage: undefined
       };
 
     case actionTypes.LOGIN_USER:
@@ -64,22 +64,14 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         ...action.payload,
-        showSingleArticle: false,
-        showArticlesList: false
+        showArticlesList: false,
+        singleArticle: undefined
       };
 
     case actionTypes.FLASH_MESSAGE:
       return {
         ...state,
         ...action.payload 
-      }
-
-    case actionTypes.BACK_TO_ARTICLE:
-      return {
-        ...state,
-        showSubscription: false,
-        showSingleArticle: true,
-        flashMessage: undefined
       }
 
     default:

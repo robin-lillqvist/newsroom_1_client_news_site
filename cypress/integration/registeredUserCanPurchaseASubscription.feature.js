@@ -53,6 +53,6 @@ describe("registered user can purchase a subscription", () => {
     cy.get("button")
       .contains("Submit Payment")
       .click();
-    cy.get("button").contains("Back to article").click();
+    // cy.get("button").contains("Back to article").click();
   });
 });
