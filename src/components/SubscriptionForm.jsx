@@ -7,21 +7,23 @@ import {
   injectStripe
 } from "react-stripe-elements";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const SubscriptionForm = props => {
   const dispatch = useDispatch();
+  const userEmail = useSelector(state => state.userEmail)
   const submitPayment = async event => {
     event.preventDefault();
     let stripeResponse = await props.stripe.createToken();
     let token = stripeResponse.token.id;
     let paymentStatus = await axios.post("**/subscriptions", {
-      stripeToken: token
+      stripeToken: token,
+      email: userEmail
     });
     if (paymentStatus.data.status === "paid")
       dispatch({
         type: "FLASH_MESSAGE",
-        payload: { flashMessage: "Thank you for your business!" }
+        payload: { flashMessage: "Thank you for your business!", showSubscription:false, currentUser: { email: userEmail, premiumUser: true } }
       });
   };
   return (
@@ -65,7 +67,7 @@ const SubscriptionForm = props => {
         </Button>
       </Form>
      
-    <Button onClick={ () => props.dispatch({type: 'BACK_TO_ARTICLE'})}>
+    <Button onClick={ () => dispatch({type: 'BACK_TO_ARTICLE'})}>
       Back to article
     </Button>
   </>

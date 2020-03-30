@@ -78,7 +78,8 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         showSubscription: false,
-        showSingleArticle: true
+        showSingleArticle: true,
+        flashMessage: undefined
       }
 
     default:

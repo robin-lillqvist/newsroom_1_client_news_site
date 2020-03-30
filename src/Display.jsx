@@ -12,7 +12,7 @@ const Display = props => {
   props.fetchArticles()
   return (
     <>
-      {props.flashMessage.length > 0 && <h2>{props.flashMessage}</h2>}
+      {props.flashMessage && <h2>{props.flashMessage}</h2>}
       {props.showArticlesList && <DisplayArticles />}
       {props.singleArticle && <DisplaySingleArticle />}
       {props.showLogin && <Login/>}
