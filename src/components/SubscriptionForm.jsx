@@ -12,18 +12,20 @@ import { useDispatch, useSelector } from "react-redux";
 const SubscriptionForm = props => {
   const dispatch = useDispatch();
   const userEmail = useSelector(state => state.userEmail)
+  let headers = JSON.parse(localStorage.getItem("J-tockAuth-Storage"))
   const submitPayment = async event => {
     event.preventDefault();
     let stripeResponse = await props.stripe.createToken();
     let token = stripeResponse.token.id;
-    let paymentStatus = await axios.post("**/subscriptions", {
-      stripeToken: token,
-      email: userEmail
-    });
+    let paymentStatus = await axios.post("/subscriptions", {
+      stripeToken: token, email: userEmail
+    },
+      { headers: headers }
+    );
     if (paymentStatus.data.status === "paid")
       dispatch({
         type: "FLASH_MESSAGE",
-        payload: { flashMessage: "Thank you for your business!", showArticlesList:true, showSubscription:false, premiumUser:true },
+        payload: { flashMessage: "Thank you for your business!", showArticlesList: true, showSubscription: false, premiumUser: true },
       });
 
   };
@@ -48,7 +50,7 @@ const SubscriptionForm = props => {
     //     </Form>
     //   </Modal.Content>
     // </Modal>
-    <>  
+    <>
       <Form id="payment-form">
         <Header textAlign="center" level="4">
           Payment Form
@@ -68,11 +70,11 @@ const SubscriptionForm = props => {
           Submit Payment
         </Button>
       </Form>
-     
-    {/* <Button onClick={ () => dispatch({type: 'BACK_TO_ARTICLE'})}>
+
+      {/* <Button onClick={ () => dispatch({type: 'BACK_TO_ARTICLE'})}>
       Back to article
     </Button> */}
-  </>
+    </>
   );
 };
 
