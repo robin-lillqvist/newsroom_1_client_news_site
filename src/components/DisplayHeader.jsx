@@ -25,9 +25,6 @@ const DisplayHeader = props => {
           {name}
         </Menu.Item>
         <Image src={Logo} size='medium' centered rounded/>
-        {/* <Menu.Item name="main-header" id="main-header" position="right">
-          <Icon name="sidebar" size="large"></Icon>
-        </Menu.Item> */}
       </Menu>
     </Segment>
   );
