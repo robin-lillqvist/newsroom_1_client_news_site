@@ -1,8 +1,9 @@
 import React from "react";
-import { Menu, Segment, Icon } from "semantic-ui-react";
+import { Menu, Segment, Icon, Image } from "semantic-ui-react";
 import { LOGIN_USER } from "../state/actions/actionTypes";
 import { connect } from "react-redux";
 import { useSelector } from "react-redux";
+import Logo from "../images/Logo.png";
 
 const DisplayHeader = props => {
   const authenticated = useSelector(state => state.authenticated);
@@ -23,9 +24,10 @@ const DisplayHeader = props => {
         >
           {name}
         </Menu.Item>
-        <Menu.Item name="main-header" id="main-header" position="right">
+        <Image src={Logo} size='medium' centered rounded/>
+        {/* <Menu.Item name="main-header" id="main-header" position="right">
           <Icon name="sidebar" size="large"></Icon>
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu>
     </Segment>
   );
