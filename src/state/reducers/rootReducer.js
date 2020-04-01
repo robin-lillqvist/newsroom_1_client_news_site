@@ -22,7 +22,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         showArticlesList: true,
-        singleArticle: undefined,
+        singleArticle: undefined
       };
 
     case actionTypes.CATEGORY_SELECTION:
@@ -42,6 +42,7 @@ const rootReducer = (state = initialState, action) => {
         showArticlesList: false,
         singleArticle: undefined
       };
+
     case actionTypes.CLOSE_LOGIN:
       return {
         ...state,
@@ -49,11 +50,13 @@ const rootReducer = (state = initialState, action) => {
         showArticlesList: true,
         message: ""
       };
+
     case actionTypes.GREETING:
       return {
         ...state,
         message: action.payload
       };
+
     case actionTypes.AUTHENTICATE:
       return {
         ...state,
@@ -71,8 +74,8 @@ const rootReducer = (state = initialState, action) => {
     case actionTypes.FLASH_MESSAGE:
       return {
         ...state,
-        ...action.payload 
-      }
+        ...action.payload
+      };
 
     default:
       return state;

@@ -8,4 +8,3 @@ export const GREETING = "GREETING";
 export const CLOSE_LOGIN = "CLOSE_LOGIN";
 export const SHOW_SUBSCRIPTION = "SHOW_SUBSCRIPTION";
 export const FLASH_MESSAGE = "FLASH_MESSAGE";
-export const BACK_TO_ARTICLE = "BACK_TO_ARTICLE";

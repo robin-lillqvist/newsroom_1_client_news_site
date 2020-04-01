@@ -28,7 +28,6 @@ const SubscriptionForm = props => {
       type: "FLASH_MESSAGE",
       payload: { flashMessage: "Thank you for your business!", showArticlesList: true, showSubscription: false, premiumUser: true },
     });
-
   };
 
   return (
