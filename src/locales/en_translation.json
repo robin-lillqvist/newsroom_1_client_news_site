@@ -17,8 +17,17 @@
       "read-more":"Read More",
       "buy-subscription":"Buy a Subscription",
       "back":"Back",
-      "premium-message": "This article requires a premium membership. Please login to purchase a subscription."
-
+      "login-for-premium": "This article requires a premium membership. Please login to purchase a subscription.",
+      "premium-message":"This article requires a premium membership."
+    },
+    "auth": {
+      "logout":"Logout",
+      "login": "Login",
+      "email":"Email",
+      "password":"Password",
+      "close":"Close",
+      "bye":"See ya!",
+      "welcome": "Welcome "
     }
   }
 }

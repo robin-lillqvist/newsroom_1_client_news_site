@@ -28,9 +28,9 @@ const DisplayHeader = props => {
   const authenticated = useSelector(state => state.authenticated);
   let name;
   if (authenticated) {
-    name = "Logout";
+    name = `${t("auth.logout")}`;
   } else {
-    name = "Login";
+    name = `${t("auth.login")}`;
   }
 
   const changeLanguage = event => {

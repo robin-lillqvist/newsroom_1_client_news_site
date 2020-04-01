@@ -17,7 +17,17 @@
       "read-more":"Laser Mer",
       "buy-subscription":"Köp ett Prenumeration",
       "back":"Tillbaka",
-      "premium-message":"Den här artikeln kräver ett premiummedlemskap. Logga in för att köpa ett prenumeration."
+      "login-for-premium":"Den här artikeln kräver ett premiummedlemskap. Logga in för att köpa ett prenumeration.",
+      "premium-message":"Den här artikeln kräver ett premiummedlemskap."
+    },
+    "auth": {
+      "logout":"Logga ut",
+      "login": "Logga in",
+      "email":"E-post",
+      "password":"Lösenord",
+      "close":"Utgång",
+      "bye":"Hej då!",
+      "welcome": "Välkommen "
     }
   }
 }

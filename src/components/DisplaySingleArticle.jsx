@@ -17,7 +17,7 @@ const DisplaySingleArticle = props => {
     article.content = article.content.substring(0, 200) + "...";
     premiumMessage = (
       <p id="premium-message">
-        This article requires a premium membership.
+        {t("article.premium-message")}
         <Button positive
           onClick={() => props.dispatch({ type: "SHOW_SUBSCRIPTION", payload: { showSubscription: true } })}
         >{t("article.buy-subscription")}
@@ -29,7 +29,7 @@ const DisplaySingleArticle = props => {
     article.content = article.content.substring(0, 200) + "...";
     premiumMessage = (
       <p id="premium-message">
-        {t("article.premium-message")}
+        {t("article.login-for-premium")}
       </p>
     );
   }
