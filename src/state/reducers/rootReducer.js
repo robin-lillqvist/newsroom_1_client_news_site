@@ -77,6 +77,12 @@ const rootReducer = (state = initialState, action) => {
         ...action.payload
       };
 
+    case actionTypes.CHANGE_LANGUAGE:
+      return {
+        ...state,
+        language: action.payload
+      };
+
     default:
       return state;
   }

@@ -7,6 +7,9 @@
         "tech": "Tech",
         "food": "Mat",
         "sports": "Sporter"
-      }
+      },
+      "head": {
+        "login": "Logga In"
     }
   }
+}

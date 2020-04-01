@@ -7,6 +7,10 @@
       "tech": "Tech",
       "food": "Food",
       "sports": "Sports"
+    },
+    "head": {
+      "login": "login"
+
     }
   }
 }
