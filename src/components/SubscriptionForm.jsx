@@ -12,15 +12,19 @@ import { useDispatch, useSelector } from "react-redux";
 const SubscriptionForm = props => {
   const dispatch = useDispatch();
   const userEmail = useSelector(state => state.userEmail)
+  let headers = JSON.parse(localStorage.getItem("J-tockAuth-Storage"))
   const submitPayment = async event => {
     event.preventDefault();
     let stripeResponse = await props.stripe.createToken();
     let token = stripeResponse.token.id;
-    let paymentStatus = await axios.post("**/subscriptions", {
+    let paymentStatus = await axios.post("/subscriptions", {
       stripeToken: token,
       email: userEmail
-    });
+    },
+    {headers: headers}
+    );
     if (paymentStatus.data.status === "paid")
+    debugger
       dispatch({
         type: "FLASH_MESSAGE",
         payload: { flashMessage: "Thank you for your business!", showArticlesList:true, showSubscription:false, premiumUser:true },
