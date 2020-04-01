@@ -2,8 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { useSelector } from "react-redux";
 import { Button, Header, Icon, Image, Container } from "semantic-ui-react";
+import { useTranslation } from "react-i18next";
 
 const DisplaySingleArticle = props => {
+  const { t, i18n } = useTranslation("common");
   const premiumUser = useSelector(state => state.premiumUser);
   const userEmail = useSelector(state => state.userEmail);
   let articleDetails;
@@ -18,7 +20,7 @@ const DisplaySingleArticle = props => {
         This article requires a premium membership.
         <Button positive
           onClick={() => props.dispatch({ type: "SHOW_SUBSCRIPTION", payload: { showSubscription: true } })}
-        >Buy Subscription
+        >{t("article.buy-subscription")}
         </Button>
       </p>
     );
@@ -27,7 +29,7 @@ const DisplaySingleArticle = props => {
     article.content = article.content.substring(0, 200) + "...";
     premiumMessage = (
       <p id="premium-message">
-        This article requires a premium membership. Please login to purchase a subscription.
+        {t("article.premium-message")}
       </p>
     );
   }
@@ -51,7 +53,7 @@ const DisplaySingleArticle = props => {
           key={article.id}
         >
           <Icon name="chevron left" />
-          Back
+          {t("article.back")}
         </Button>
       </Container>
     </div>

@@ -1,0 +1,24 @@
+{
+  "en": {
+    "nav": {
+      "all": "All News",
+      "latest-news": "Latest News",
+      "culture": "Culture",
+      "tech": "Tech",
+      "food": "Food",
+      "sports": "Sports"
+    },
+    "head": {
+      "login": "Login",
+      "english":"English",
+      "swedish":"Svenska"
+    },
+    "article": {
+      "read-more":"Read More",
+      "buy-subscription":"Buy a Subscription",
+      "back":"Back",
+      "premium-message": "This article requires a premium membership. Please login to purchase a subscription."
+
+    }
+  }
+}

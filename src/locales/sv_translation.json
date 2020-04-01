@@ -1,0 +1,23 @@
+{
+  "sv": {
+    "nav": {
+      "all": "Alla Nyheter",
+      "latest-news": "Senaste Nytt",
+      "culture": "Kultur",
+      "tech": "Tech",
+      "food": "Mat",
+      "sports": "Sporter"
+    },
+    "head": {
+      "login": "Logga In",
+      "english": "English",
+      "swedish": "Svenska"
+    },
+    "article": {
+      "read-more":"Laser Mer",
+      "buy-subscription":"Köp ett Prenumeration",
+      "back":"Tillbaka",
+      "premium-message":"Den här artikeln kräver ett premiummedlemskap. Logga in för att köpa ett prenumeration."
+    }
+  }
+}

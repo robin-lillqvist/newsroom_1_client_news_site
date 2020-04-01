@@ -1,4 +1,4 @@
-import en from './default.json.js';
-import sv from './default_sv.json.js';
+import en from './en_translation.json';
+import sv from './sv_translation.json';
 
 export { sv, en };

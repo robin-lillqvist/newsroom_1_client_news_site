@@ -34,7 +34,7 @@ const HeaderCategories = props => {
         active={props.activeItem === "all"}
       />
       <Menu.Item
-        name="Latest News"
+        name={t("nav.latest-news")}
         id="latest-news"
         color="red"
         as={Link}
@@ -43,7 +43,7 @@ const HeaderCategories = props => {
         active={props.activeItem === "latest_news"}
       />
       <Menu.Item
-        name="Culture"
+        name={t("nav.culture")}
         id="culture"
         color={"purple"}
         as={Link}
@@ -52,7 +52,7 @@ const HeaderCategories = props => {
         active={props.activeItem === "culture"}
       />
       <Menu.Item
-        name="Tech"
+        name={t("nav.tech")}
         id="tech"
         color={"blue"}
         as={Link}
@@ -61,7 +61,7 @@ const HeaderCategories = props => {
         active={props.activeItem === "tech"}
       />
       <Menu.Item
-        name="Food"
+        name={t("nav.food")}
         id="food"
         color={"teal"}
         as={Link}
@@ -70,7 +70,7 @@ const HeaderCategories = props => {
         active={props.activeItem === "food"}
       />
       <Menu.Item
-        name="Sports"
+        name={t("nav.sports")}
         id="sports"
         color={"green"}
         as={Link}

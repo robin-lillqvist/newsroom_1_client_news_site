@@ -3,8 +3,10 @@ import { connect } from "react-redux";
 import { Grid, Header, Image, Button } from "semantic-ui-react";
 import { fetchSingleArticle } from "../state/actions/articleActions";
 import { bindActionCreators } from "redux";
+import { useTranslation } from "react-i18next";
 
 const DisplayArticles = props => {
+  const { t, i18n } = useTranslation("common");
   const singleArticle = articleID => {
     props.fetchSingleArticle(articleID);
   };
@@ -28,7 +30,7 @@ const DisplayArticles = props => {
             onClick={() => singleArticle(article.id)}
             key={article.id}
           >
-            Read more
+            {t("article.read-more")}
           </Button>
         </Grid.Column>
       </Grid>
