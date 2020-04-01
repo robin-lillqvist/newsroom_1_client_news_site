@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Modal, Form, Button, Label, Segment } from "semantic-ui-react";
+import { Header, Form, Button, Segment } from "semantic-ui-react";
 import {
   CardNumberElement,
   CardExpiryElement,

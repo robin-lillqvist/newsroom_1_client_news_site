@@ -3,10 +3,10 @@ import { Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { CATEGORY_SELECTION } from "../state/actions/actionTypes";
-import { useTranslation } from 'reacti18next'
+import { useTranslation } from 'react-i18next'
 
 const HeaderCategories = props => {
-  const { t } = useTranslation
+  const { t } = useTranslation("common")
   const handleItemClick = event => {
     props.dispatch({
       type: CATEGORY_SELECTION,
@@ -25,7 +25,7 @@ const HeaderCategories = props => {
       style={{ backgroundColor: "white" }}
     >
       <Menu.Item
-        name="All News"
+        name={t("nav.all")}
         id=""
         color="yellow"
         as={Link}

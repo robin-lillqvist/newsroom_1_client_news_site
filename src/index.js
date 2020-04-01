@@ -9,7 +9,6 @@ import "semantic-ui-css/semantic.min.css";
 import { BrowserRouter } from "react-router-dom";
 import axios from 'axios';
 import { StripeProvider } from 'react-stripe-elements';
-import i18n from './i18n'
 
 axios.defaults.baseURL = "https://newsroom-team-1.herokuapp.com/api";
 

@@ -1,0 +1,12 @@
+{
+    "sv": {
+      "nav": {
+        "all": "Alla Nyheter",
+        "latest-news": "Senaste Nytt",
+        "culture": "Kultur",
+        "tech": "Tech",
+        "food": "Mat",
+        "sports": "Sporter"
+      }
+    }
+  }
