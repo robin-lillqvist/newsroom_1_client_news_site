@@ -74,9 +74,6 @@ describe("registered user can purchase a subscription", () => {
     cy.get("button")
       .contains("Submit Payment")
       .click();
-    // cy.get("button").contains("Back to article").click();
-    //cy.wait('@purchase')
-    //cy.get('h2[id="message"]').should('contain', "Thank you for your business!")
     cy.get('#subscription-message').should('contain', "Thank you for your business!")
   });
 });

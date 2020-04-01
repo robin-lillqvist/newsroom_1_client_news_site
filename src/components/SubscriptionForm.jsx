@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Modal, Form, Button, Label } from "semantic-ui-react";
+import { Header, Modal, Form, Button, Label, Segment } from "semantic-ui-react";
 import {
   CardNumberElement,
   CardExpiryElement,
@@ -21,46 +21,47 @@ const SubscriptionForm = props => {
       stripeToken: token,
       email: userEmail
     },
-    {headers: headers}
+      { headers: headers }
     );
     if (paymentStatus.data.status === "paid")
-    debugger
-      dispatch({
-        type: "FLASH_MESSAGE",
-        payload: { flashMessage: "Thank you for your business!", showArticlesList: true, showSubscription: false, premiumUser: true },
-      });
+    dispatch({
+      type: "FLASH_MESSAGE",
+      payload: { flashMessage: "Thank you for your business!", showArticlesList: true, showSubscription: false, premiumUser: true },
+    });
 
   };
 
   return (
     <>
-      <Form id="payment-form">
-        <Header textAlign="center" level="4">
-          Payment Form
+      <Segment raised compact>
+        <Form id="payment-form">
+          <Header textAlign="center" as='h2' dividing>
+            Payment Form
         </Header>
-        <Header textAlign="center" level="5">
-          Step above the crowd, with our Premium Platinum Plan costing the low amount of 10,000SEK per year. 
-          This yearly subscription will allow you to access all the amazing ultra premium content in addition to the acceptable free content.
+          <Header textAlign="center" as='h5'>
+            Step above the crowd, with our Premium Platinum Plan costing the low amount of 10,000SEK per year.
+            </Header>
+          <Header textAlign="center" as='h5'>
+            This yearly subscription will allow you to access all the amazing ultra premium content in addition to the acceptable free content.
         </Header>
-        <label>Card number:</label>
-        <CardNumberElement />
-        <label>Expiry date:</label>
-        <CardExpiryElement />
-        <label>CVC:</label>
-        <CardCVCElement />
-        <Button
-          margin="xsmall"
-          onClick={event => {
-            submitPayment(event);
-          }}
-        >
-          Submit Payment
+          <Segment raised compact>
+            <label>Card number:</label>
+            <CardNumberElement />
+            <label>Expiry date:</label>
+            <CardExpiryElement />
+            <label>CVC:</label>
+            <CardCVCElement />
+            <Button
+              margin="xsmall"
+              onClick={event => {
+                submitPayment(event);
+              }}
+            >
+              Submit Payment
         </Button>
-      </Form>
-
-      {/* <Button onClick={ () => dispatch({type: 'BACK_TO_ARTICLE'})}>
-      Back to article
-    </Button> */}
+          </Segment>
+        </Form>
+      </Segment>
     </>
   );
 };
