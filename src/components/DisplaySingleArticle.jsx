@@ -5,7 +5,7 @@ import { Button, Header, Icon, Image, Container } from "semantic-ui-react";
 import { useTranslation } from "react-i18next";
 
 const DisplaySingleArticle = props => {
-  const { t, i18n } = useTranslation("common");
+  const { t } = useTranslation("common");
   const premiumUser = useSelector(state => state.premiumUser);
   const userEmail = useSelector(state => state.userEmail);
   let articleDetails;

@@ -1,5 +1,5 @@
 import { Menu, Segment, Image } from "semantic-ui-react";
-import { LOGIN_USER, CHANGE_LANGUAGE} from "../state/actions/actionTypes";
+import { LOGIN_USER, CHANGE_LANGUAGE } from "../state/actions/actionTypes";
 import { connect } from "react-redux";
 import { useSelector } from "react-redux";
 import Logo from "../images/Logo.png";
@@ -8,6 +8,23 @@ import React, { useEffect } from "react";
 import i18n from "../i18n"
 
 const DisplayHeader = props => {
+  const { t, i18n } = useTranslation("common");
+
+  useEffect(() => {
+    const browserLanguages = navigator.languages;
+    for (let i = 0; i < browserLanguages.length; i++) {
+      if (browserLanguages[i].substring(0, 2) === "sv") {
+        i18n.changeLanguage("sv");
+        props.dispatch({ type: CHANGE_LANGUAGE, payload: { language: "sv" } });
+        break;
+      } else if (browserLanguages[i].substring(0, 2) === "en") {
+        i18n.changeLanguage("en");
+        props.dispatch({ type: CHANGE_LANGUAGE, payload: { language: "en" } });
+        break;
+      }
+    }
+  }, []);
+
   const authenticated = useSelector(state => state.authenticated);
   let name;
   if (authenticated) {
@@ -16,35 +33,10 @@ const DisplayHeader = props => {
     name = "Login";
   }
 
-  const { t, i18n } = useTranslation("common");
-
   const changeLanguage = event => {
-    let languageButtons = document.getElementsByClassName("lng-button");
-    debugger
-    Array.from(languageButtons).forEach(
-      button => (document.getElementById(button.id).style.fontWeight = "300")
-    );
     i18n.changeLanguage(event.target.id);
-    props.changeLanguage(event.target.id);
-    //document.getElementById(event.target.id).style.fontWeight = "900";
+    props.dispatch({ type: CHANGE_LANGUAGE, payload: { language: event.target.id } });
   };
-
-  useEffect(() => {
-    const browserLanguages = navigator.languages;
-    for (let i = 0; i < browserLanguages.length; i++) {
-      if (browserLanguages[i].substring(0, 2) === "sv") {
-        i18n.changeLanguage("sv");
-        props.changeLanguage("sv");
-        // document.getElementById("sv").style.fontWeight = "900";
-        break;
-      } else if (browserLanguages[i].substring(0, 2) === "en") {
-        i18n.changeLanguage("en");
-        props.changeLanguage("en");
-        // document.getElementById("en").style.fontWeight = "900";
-        break;
-      }
-    }
-  }, []);
 
 
   return (
@@ -52,7 +44,7 @@ const DisplayHeader = props => {
 
       <Menu inverted pointing secondary id="main-header">
         <Menu.Item
-           name={t("head.login")}
+          name={t("head.login")}
           id="login"
           onClick={() => props.dispatch({ type: LOGIN_USER })}
         >
@@ -79,12 +71,4 @@ const DisplayHeader = props => {
   );
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    changeLanguage: language => {
-      dispatch({ type: CHANGE_LANGUAGE, payload: language });
-    }
-  };
-};
-
-export default connect(null, mapDispatchToProps)(DisplayHeader);
+export default connect()(DisplayHeader);

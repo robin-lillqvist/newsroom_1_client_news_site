@@ -13,6 +13,7 @@ import { Elements } from 'react-stripe-elements';
 
 const Display = props => {
   props.fetchArticles()
+  
   return (
     <>
       {props.flashMessage && <h2 id="subscription-message">{props.flashMessage}</h2>}
