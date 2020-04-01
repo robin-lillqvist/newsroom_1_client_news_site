@@ -18,11 +18,13 @@ const SubscriptionForm = props => {
     let stripeResponse = await props.stripe.createToken();
     let token = stripeResponse.token.id;
     let paymentStatus = await axios.post("/subscriptions", {
-      stripeToken: token, email: userEmail
+      stripeToken: token,
+      email: userEmail
     },
-      { headers: headers }
+    {headers: headers}
     );
     if (paymentStatus.data.status === "paid")
+    debugger
       dispatch({
         type: "FLASH_MESSAGE",
         payload: { flashMessage: "Thank you for your business!", showArticlesList: true, showSubscription: false, premiumUser: true },
@@ -31,29 +33,14 @@ const SubscriptionForm = props => {
   };
 
   return (
-    // <Modal trigger={<Button>Make Payment</Button>} closeIcon>
-    //   <Header content="Subscription Form" />
-    //   <Modal.Content>
-    //     <Form id="subscription-form">
-    //       <Label pointing="bottom">Please enter Card Number</Label>
-    //       <CardNumberElement id="cne"/>
-
-    //       <Label pointing="bottom">Please enter Expiration Date</Label>
-    //       <CardExpiryElement />
-
-    //       <Label pointing="bottom">Please enter CVC</Label>
-    //       <CardCVCElement />
-
-    //       <Button positive
-    //       onClick={(event) => submitPayment(event)}
-    //       >Confirm Subscription</Button>
-    //     </Form>
-    //   </Modal.Content>
-    // </Modal>
     <>
       <Form id="payment-form">
         <Header textAlign="center" level="4">
           Payment Form
+        </Header>
+        <Header textAlign="center" level="5">
+          Step above the crowd, with our Premium Platinum Plan costing the low amount of 10,000SEK per year. 
+          This yearly subscription will allow you to access all the amazing ultra premium content in addition to the acceptable free content.
         </Header>
         <label>Card number:</label>
         <CardNumberElement />
