@@ -5,7 +5,9 @@ import { Switch, Route } from "react-router-dom";
 import DisplayHeader from "./components/DisplayHeader";
 import HeaderCategories from "./components/DisplayHeaderCategory";
 import Display from './Display'
+//import { useTranslation } from 'reacti18next'
 
+//const { t } = useTranslation
 
 const App = props => {
   return (

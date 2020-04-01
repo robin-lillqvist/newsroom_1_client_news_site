@@ -3,8 +3,10 @@ import { Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { CATEGORY_SELECTION } from "../state/actions/actionTypes";
+import { useTranslation } from 'reacti18next'
 
 const HeaderCategories = props => {
+  const { t } = useTranslation
   const handleItemClick = event => {
     props.dispatch({
       type: CATEGORY_SELECTION,
@@ -33,7 +35,7 @@ const HeaderCategories = props => {
       />
       <Menu.Item
         name="Latest News"
-        id="latest_news"
+        id="latest-news"
         color="red"
         as={Link}
         to={{ pathname: "/latest_news" }}

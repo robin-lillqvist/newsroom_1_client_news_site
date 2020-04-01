@@ -7,6 +7,9 @@ import DisplaySingleArticle from "./components/DisplaySingleArticle";
 import Login from './components/UserLogin';
 import SubscriptionForm from './components/SubscriptionForm';
 import { Elements } from 'react-stripe-elements';
+//import { useTranslation } from 'reacti18next'
+
+//const { t } = useTranslation
 
 const Display = props => {
   props.fetchArticles()
