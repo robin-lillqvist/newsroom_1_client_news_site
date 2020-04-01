@@ -24,24 +24,24 @@ const SubscriptionForm = props => {
       { headers: headers }
     );
     if (paymentStatus.data.status === "paid")
-    dispatch({
-      type: "FLASH_MESSAGE",
-      payload: { flashMessage: "Thank you for your business!", showArticlesList: true, showSubscription: false, premiumUser: true },
-    });
+      dispatch({
+        type: "FLASH_MESSAGE",
+        payload: { flashMessage: "You are now a Premium Platinum member!", showArticlesList: true, showSubscription: false, premiumUser: true },
+      });
   };
 
   return (
     <>
       <Segment raised compact>
         <Form id="payment-form">
-          <Header textAlign="center" as='h2' dividing>
+          <Header textAlign="center" as="h2" dividing>
             Payment Form
         </Header>
-          <Header textAlign="center" as='h5'>
-            Step above the crowd, with our Premium Platinum Plan costing the low amount of 10,000SEK per year.
+          <Header textAlign="center" as="h5">
+            Step above the crowd with our Premium Platinum Plan for only 10,000SEK per year.
             </Header>
-          <Header textAlign="center" as='h5'>
-            This yearly subscription will allow you to access all the amazing ultra premium content in addition to the acceptable free content.
+          <Header textAlign="center" as="h5">
+            This yearly subscription will allow you to access all the amazing ultra premium content in addition to our free content.
         </Header>
           <Segment raised compact>
             <label>Card number:</label>
@@ -57,7 +57,7 @@ const SubscriptionForm = props => {
               }}
             >
               Submit Payment
-        </Button>
+            </Button>
           </Segment>
         </Form>
       </Segment>
