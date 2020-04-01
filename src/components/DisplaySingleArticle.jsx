@@ -5,16 +5,29 @@ import { Button, Header, Icon, Image, Container } from "semantic-ui-react";
 
 const DisplaySingleArticle = props => {
   const premiumUser = useSelector(state => state.premiumUser);
+  const userEmail = useSelector(state => state.userEmail);
   let articleDetails;
   let articlePremium = props.singleArticle.premium;
   let article = props.singleArticle;
   let premiumMessage = "";
 
-  if (premiumUser === false && articlePremium === true) {
+  if (premiumUser === false && articlePremium === true && userEmail !== undefined) {
     article.content = article.content.substring(0, 200) + "...";
     premiumMessage = (
       <p id="premium-message">
-        <a href="">This article requires a premium membership.</a>
+        This article requires a premium membership.
+        <Button positive
+          onClick={() => props.dispatch({ type: "SHOW_SUBSCRIPTION", payload: { showSubscription: true } })}
+        >Buy Subscription
+        </Button>
+      </p>
+    );
+  }
+  else if (userEmail == undefined && articlePremium === true) {
+    article.content = article.content.substring(0, 200) + "...";
+    premiumMessage = (
+      <p id="premium-message">
+        This article requires a premium membership. Please login to purchase a subscription.
       </p>
     );
   }

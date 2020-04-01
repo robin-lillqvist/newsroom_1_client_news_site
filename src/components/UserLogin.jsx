@@ -3,7 +3,7 @@ import { onLogin, onLogout } from "../modules/authentication";
 import { useDispatch, useSelector } from "react-redux";
 import { Header, Modal, Button } from "semantic-ui-react";
 
-const Login = props => {
+const Login = () => {
   const dispatch = useDispatch();
   const authenticated = useSelector(state => state.authenticated);
   const message = useSelector(state => state.message);
@@ -33,7 +33,7 @@ const Login = props => {
         {login}
       </Modal.Content>
       <Modal.Actions>
-        <Button onClick={() => dispatch({ type: "CLOSE_LOGIN" })}>Close</Button>
+        <Button id="close-button" onClick={() => dispatch({ type: "CLOSE_LOGIN" })}>Close</Button>
       </Modal.Actions>
     </Modal>
   );
