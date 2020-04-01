@@ -28,6 +28,10 @@
       "close":"Close",
       "bye":"See ya!",
       "welcome": "Welcome "
+    },
+    "subscription": {
+      "payment-form":"Payment Form",
+      "subscription-details-1":"Step above the crowd with our Premium Platinum Plan for only 10,000SEK per year."
     }
   }
 }
