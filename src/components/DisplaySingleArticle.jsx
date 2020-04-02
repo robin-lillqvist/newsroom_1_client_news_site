@@ -23,7 +23,7 @@ const DisplaySingleArticle = props => {
       </p>
     );
   }
-  else if (userEmail == undefined && articlePremium === true) {
+  else if (userEmail === undefined && articlePremium === true) {
     article.content = article.content.substring(0, 200) + "...";
     premiumMessage = (
       <p id="premium-message">
