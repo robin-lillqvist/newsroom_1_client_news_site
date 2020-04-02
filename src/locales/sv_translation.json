@@ -1,0 +1,42 @@
+{
+  "sv": {
+    "nav": {
+      "all": "Alla Nyheter",
+      "latest-news": "Senaste Nytt",
+      "culture": "Kultur",
+      "tech": "Tech",
+      "food": "Mat",
+      "sports": "Sport"
+    },
+    "head": {
+      "login": "Logga In",
+      "english": "English",
+      "swedish": "Svenska"
+    },
+    "article": {
+      "read-more":"Läs Mer",
+      "buy-subscription":"Prenumerera",
+      "back":"Bakåt",
+      "login-for-premium":"Den här artikeln kräver ett premiummedlemskap. Logga in för att köpa en prenumeration.",
+      "premium-message":"Den här artikeln kräver ett premiummedlemskap."
+    },
+    "auth": {
+      "logout":"Logga ut",
+      "login": "Logga in",
+      "email":"E-post",
+      "password":"Lösenord",
+      "close":"Stäng",
+      "bye":"Hej då!",
+      "welcome": "Välkommen "
+    },
+    "subscription": {
+      "payment-form":"Betalningsformulär",
+      "subscription-details-1":"Bli bättre än resten med vårt Premium Platinum medlemskap för endast 10 000 SEK per år.",
+      "subscription-details-2":"Denna årliga prenumeration gör att du får tillgång till allt det fantastiska ultrapremiuminnehållet utöver vårt gratis innehåll.",
+      "card-number":"Kortnummer: ",
+      "expiry-date": "Utgångsdatum: ", 
+      "cvc": "CVC: ",
+      "flash-message":"Grattis! Du är nu en premium platinum medlem."
+    }
+  }
+}
