@@ -18,8 +18,6 @@ const SubscriptionForm = props => {
   let headers = JSON.parse(localStorage.getItem("J-tockAuth-Storage"))
   const submitPayment = async event => {
     event.preventDefault();
-    //let stripeResponse = await props.stripe.createToken();
-    //let token = stripeResponse.token.id;
     await props.stripe.createToken().then(async response => {
       try {
         let paymentStatus = await axios.post("/subscriptions", {
@@ -28,15 +26,15 @@ const SubscriptionForm = props => {
         },
           { headers: headers }
         );
-        if (paymentStatus.data.status === "paid")
+        if (paymentStatus.status === 200)
           dispatch({
             type: "FLASH_MESSAGE",
-            payload: { flashMessage: `{$t("auth.cvc")}`, showArticlesList: true, showSubscription: false, premiumUser: true },
+            payload: { flashMessage: `${t("subscription.flash-message")}`, showArticlesList: true, showSubscription: false, premiumUser: true },
           });
       } catch (error) {
         dispatch({
           type: "ERROR_MESSAGE",
-          payload: { errorMessage: response.error.message },
+          payload: { errorMessage: response.message },
         });
       }
     });
@@ -47,20 +45,20 @@ const SubscriptionForm = props => {
       <Segment raised compact>
         <Form id="payment-form">
           <Header textAlign="center" as="h2" dividing>
-            {t("auth.payment-form")}
-        </Header>
+            {t("subscription.payment-form")}
+          </Header>
           <Header textAlign="center" as="h5">
-          {t("auth.subscription-details-1")}
-            </Header>
+            {t("subscription.subscription-details-1")}
+          </Header>
           <Header textAlign="center" as="h5">
-          {t("auth.subscription-details-2")}
-        </Header>
+            {t("subscription.subscription-details-2")}
+          </Header>
           <Segment raised compact>
-            <label>{t("auth.card-number")}</label>
+            <label>{t("subscription.card-number")}</label>
             <CardNumberElement />
-            <label>{t("auth.expiry-date")}</label>
+            <label>{t("subscription.expiry-date")}</label>
             <CardExpiryElement />
-            <label>{t("auth.cvc")}</label>
+            <label>{t("subscription.cvc")}</label>
             <CardCVCElement />
             <Button
               margin="xsmall"

@@ -10,8 +10,8 @@ import { BrowserRouter } from "react-router-dom";
 import axios from 'axios';
 import { StripeProvider } from 'react-stripe-elements';
 
-axios.defaults.baseURL = "https://newsroom-team-1.herokuapp.com/api";
-
+//axios.defaults.baseURL = "https://newsroom-team-1.herokuapp.com/api";
+axios.defaults.baseURL = "http://localhost:3000/api";
 
 const store = configureStore();
 window.store = store;
