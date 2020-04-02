@@ -31,7 +31,12 @@
     },
     "subscription": {
       "payment-form":"Payment Form",
-      "subscription-details-1":"Step above the crowd with our Premium Platinum Plan for only 10,000SEK per year."
+      "subscription-details-1":"Step above the crowd with our Premium Platinum Plan for only 10,000SEK per year.",
+      "subscription-details-2": "This yearly subscription will allow you to access all the amazing ultra premium content in addition to our free content.",
+      "card-number":"Card Number: ",
+      "expiry-date": "Expiry Date: ", 
+      "cvc": "CVC: ",
+      "flash-message":"You are now a Premium Platinum member!"
     }
   }
 }

@@ -28,6 +28,15 @@
       "close":"Utgång",
       "bye":"Hej då!",
       "welcome": "Välkommen "
+    },
+    "subscription": {
+      "payment-form":"Betalningsformulär",
+      "subscription-details-1":"Steg över mängden med vår Premium Platinum Plan för endast 10 000 SEK per år.",
+      "subscription-details-2":"Denna årliga prenumeration gör att du får tillgång till allt det fantastiska ultrapremiuminnehållet utöver vårt gratis innehåll.",
+      "card-number":"",
+      "expiry-date": "", 
+      "cvc": "CVC: ",
+      "flash-message":""
     }
   }
 }

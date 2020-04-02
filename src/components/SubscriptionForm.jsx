@@ -31,7 +31,7 @@ const SubscriptionForm = props => {
         if (paymentStatus.data.status === "paid")
           dispatch({
             type: "FLASH_MESSAGE",
-            payload: { flashMessage: "You are now a Premium Platinum member!", showArticlesList: true, showSubscription: false, premiumUser: true },
+            payload: { flashMessage: `{$t("auth.cvc")}`, showArticlesList: true, showSubscription: false, premiumUser: true },
           });
       } catch (error) {
         dispatch({
@@ -53,14 +53,14 @@ const SubscriptionForm = props => {
           {t("auth.subscription-details-1")}
             </Header>
           <Header textAlign="center" as="h5">
-            This yearly subscription will allow you to access all the amazing ultra premium content in addition to our free content.
+          {t("auth.subscription-details-2")}
         </Header>
           <Segment raised compact>
-            <label>Card number:</label>
+            <label>{t("auth.card-number")}</label>
             <CardNumberElement />
-            <label>Expiry date:</label>
+            <label>{t("auth.expiry-date")}</label>
             <CardExpiryElement />
-            <label>CVC:</label>
+            <label>{t("auth.cvc")}</label>
             <CardCVCElement />
             <Button
               margin="xsmall"
