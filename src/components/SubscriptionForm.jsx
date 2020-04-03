@@ -55,11 +55,11 @@ const SubscriptionForm = props => {
           </Header>
           <Segment raised compact>
             <label>{t("subscription.card-number")}</label>
-            <CardNumberElement />
+            <CardNumberElement id="cardnumber"/>
             <label>{t("subscription.expiry-date")}</label>
-            <CardExpiryElement />
+            <CardExpiryElement id="exp-date"/>
             <label>{t("subscription.cvc")}</label>
-            <CardCVCElement />
+            <CardCVCElement id="cvc"/>
             <Button
               margin="xsmall"
               onClick={event => {
