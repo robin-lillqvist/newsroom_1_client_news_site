@@ -6,6 +6,7 @@ import Logo from "../images/Logo.png";
 import { useTranslation } from "react-i18next";
 import React, { useEffect } from "react";
 import i18n from "../i18n"
+import Weather from "./Weather";
 
 const DisplayHeader = props => {
   const { t, i18n } = useTranslation("common");
@@ -51,6 +52,7 @@ const DisplayHeader = props => {
           {name}
         </Menu.Item>
         <Image src={Logo} size="medium" centered rounded />
+         <Weather/>
         <Menu.Item
           name={t("head.english")}
           id="en"
