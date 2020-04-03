@@ -10,7 +10,8 @@ const initialState = {
   userEmail: undefined,
   message: "",
   premiumUser: false,
-  flashMessage: ""
+  flashMessage: "",
+  errorMessage: ""
 };
 
 export default initialState;

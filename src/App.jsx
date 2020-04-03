@@ -6,7 +6,6 @@ import DisplayHeader from "./components/DisplayHeader";
 import HeaderCategories from "./components/DisplayHeaderCategory";
 import Display from './Display'
 
-
 const App = props => {
   return (
     <>
