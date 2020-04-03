@@ -9,7 +9,7 @@ import i18n from "../i18n"
 import Weather from "./Weather";
 
 const DisplayHeader = props => {
-  const { t, i18n } = useTranslation("common");
+  const { t } = useTranslation();
 
   useEffect(() => {
     const browserLanguages = navigator.languages;

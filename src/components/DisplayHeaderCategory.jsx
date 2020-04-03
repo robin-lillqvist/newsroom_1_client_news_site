@@ -6,7 +6,7 @@ import { CATEGORY_SELECTION } from "../state/actions/actionTypes";
 import { useTranslation } from 'react-i18next'
 
 const HeaderCategories = props => {
-  const { t } = useTranslation("common")
+  const { t } = useTranslation()
   const handleItemClick = event => {
     props.dispatch({
       type: CATEGORY_SELECTION,

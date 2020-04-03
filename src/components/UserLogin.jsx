@@ -9,7 +9,7 @@ const Login = () => {
   const authenticated = useSelector(state => state.authenticated);
   const message = useSelector(state => state.message);
 
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
 
   let login;
   let header;

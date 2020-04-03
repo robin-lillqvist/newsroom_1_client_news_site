@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "all": "All News",
+    "latest-news": "Latest News",
+    "culture": "Culture",
+    "tech": "Tech",
+    "food": "Food",
+    "sports": "Sports"
+  },
+  "head": {
+    "login": "Login",
+    "english": "English",
+    "swedish": "Svenska"
+  },
+  "article": {
+    "read-more": "Read More",
+    "buy-subscription": "Buy a Subscription",
+    "back": "Back",
+    "login-for-premium": "This article requires a premium membership. Please login to purchase a subscription.",
+    "premium-message": "This article requires a premium membership."
+  },
+  "auth": {
+    "logout": "Logout",
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "close": "Close",
+    "bye": "See ya!",
+    "welcome": "Welcome "
+  },
+  "subscription": {
+    "payment-form": "Payment Form",
+    "subscription-details-1": "Step above the crowd with our Premium Platinum Plan for only 10,000SEK per year.",
+    "subscription-details-2": "This yearly subscription will allow you to access all the amazing ultra premium content in addition to our free content.",
+    "card-number": "Card Number: ",
+    "expiry-date": "Expiry Date: ",
+    "cvc": "CVC: ",
+    "flash-message": "You are now a Premium Platinum member!"
+  }
+}

@@ -14,7 +14,7 @@ const SubscriptionForm = props => {
   const dispatch = useDispatch();
   const userEmail = useSelector(state => state.userEmail)
   const errorMessage = useSelector(state => state.errorMessage)
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
   let headers = JSON.parse(localStorage.getItem("J-tockAuth-Storage"))
   const submitPayment = async event => {
     event.preventDefault();
