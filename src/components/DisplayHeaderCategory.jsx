@@ -3,10 +3,10 @@ import { Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { CATEGORY_SELECTION } from "../state/actions/actionTypes";
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from "react-i18next";
 
 const HeaderCategories = props => {
-  const { t } = useTranslation("common")
+  const { t } = useTranslation();
   const handleItemClick = event => {
     props.dispatch({
       type: CATEGORY_SELECTION,

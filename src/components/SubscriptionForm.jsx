@@ -12,33 +12,40 @@ import { useTranslation } from "react-i18next";
 
 const SubscriptionForm = props => {
   const dispatch = useDispatch();
-  const userEmail = useSelector(state => state.userEmail)
-  const errorMessage = useSelector(state => state.errorMessage)
-  const { t } = useTranslation("common");
-  let headers = JSON.parse(localStorage.getItem("J-tockAuth-Storage"))
+  const userEmail = useSelector(state => state.userEmail);
+  const errorMessage = useSelector(state => state.errorMessage);
+  const { t } = useTranslation();
+  let headers = JSON.parse(localStorage.getItem("J-tockAuth-Storage"));
   const submitPayment = async event => {
     event.preventDefault();
     await props.stripe.createToken().then(async response => {
       try {
-        let paymentStatus = await axios.post("/subscriptions", {
-          stripeToken: response.token.id,
-          email: userEmail
-        },
+        let paymentStatus = await axios.post(
+          "/subscriptions",
+          {
+            stripeToken: response.token.id,
+            email: userEmail
+          },
           { headers: headers }
         );
         if (paymentStatus.status === 200)
           dispatch({
             type: "FLASH_MESSAGE",
-            payload: { flashMessage: `${t("subscription.flash-message")}`, showArticlesList: true, showSubscription: false, premiumUser: true },
+            payload: {
+              flashMessage: `${t("subscription.flash-message")}`,
+              showArticlesList: true,
+              showSubscription: false,
+              premiumUser: true
+            }
           });
       } catch (error) {
         dispatch({
           type: "ERROR_MESSAGE",
-          payload: { errorMessage: response.message },
+          payload: { errorMessage: response.message }
         });
       }
     });
-  }
+  };
 
   return (
     <>
@@ -55,11 +62,11 @@ const SubscriptionForm = props => {
           </Header>
           <Segment raised compact>
             <label>{t("subscription.card-number")}</label>
-            <CardNumberElement />
+            <CardNumberElement id="cardnumber" />
             <label>{t("subscription.expiry-date")}</label>
-            <CardExpiryElement />
+            <CardExpiryElement id="exp-date" />
             <label>{t("subscription.cvc")}</label>
-            <CardCVCElement />
+            <CardCVCElement id="cvc" />
             <Button
               margin="xsmall"
               onClick={event => {

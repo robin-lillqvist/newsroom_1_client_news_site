@@ -6,7 +6,7 @@ import { bindActionCreators } from "redux";
 import { useTranslation } from "react-i18next";
 
 const DisplayArticles = props => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
   const singleArticle = articleID => {
     props.fetchSingleArticle(articleID);
   };

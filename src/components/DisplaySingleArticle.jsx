@@ -5,7 +5,7 @@ import { Button, Header, Icon, Image, Container } from "semantic-ui-react";
 import { useTranslation } from "react-i18next";
 
 const DisplaySingleArticle = props => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
   const premiumUser = useSelector(state => state.premiumUser);
   const userEmail = useSelector(state => state.userEmail);
   let articleDetails;
@@ -13,24 +13,32 @@ const DisplaySingleArticle = props => {
   let article = props.singleArticle;
   let premiumMessage = "";
 
-  if (premiumUser === false && articlePremium === true && userEmail !== undefined) {
+  if (
+    premiumUser === false &&
+    articlePremium === true &&
+    userEmail !== undefined
+  ) {
     article.content = article.content.substring(0, 200) + "...";
     premiumMessage = (
       <p id="premium-message">
         {t("article.premium-message")}
-        <Button positive
-          onClick={() => props.dispatch({ type: "SHOW_SUBSCRIPTION", payload: { showSubscription: true } })}
-        >{t("article.buy-subscription")}
+        <Button
+          positive
+          onClick={() =>
+            props.dispatch({
+              type: "SHOW_SUBSCRIPTION",
+              payload: { showSubscription: true }
+            })
+          }
+        >
+          {t("article.buy-subscription")}
         </Button>
       </p>
     );
-  }
-  else if (userEmail === undefined && articlePremium === true) {
+  } else if (userEmail === undefined && articlePremium === true) {
     article.content = article.content.substring(0, 200) + "...";
     premiumMessage = (
-      <p id="premium-message">
-        {t("article.login-for-premium")}
-      </p>
+      <p id="premium-message">{t("article.login-for-premium")}</p>
     );
   }
 

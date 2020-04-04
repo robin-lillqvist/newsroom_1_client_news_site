@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getWeatherData = async (coords) => {
+const getWeatherData = async coords => {
   try {
     let token = "811885be91ed342c917e1667deb6f04b";
     let response = await axios.get(
