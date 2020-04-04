@@ -13,39 +13,48 @@ const Login = () => {
 
   let login;
   let header;
-  let icon
+  let icon;
   if (authenticated) {
-    login = <button onClick={() => onLogout(dispatch)}>{t("auth.logout")}</button>;
+    login = (
+      <button onClick={() => onLogout(dispatch)}>{t("auth.logout")}</button>
+    );
     header = `${t("auth.logout")}`;
-    icon = "sign-out"
+    icon = "sign-out";
   } else {
     header = `${t("auth.login")}`;
-    icon = "sign-in"
+    icon = "sign-in";
     login = (
       <form id="login-form" onSubmit={event => onLogin(event, dispatch)}>
-        <input 
-          id="email" 
-          name="email" 
-          placeholder={t("auth.email")} />
+        <input id="email" name="email" placeholder={t("auth.email")} />
         <input
           id="password"
           name="password"
           type="password"
           placeholder={t("auth.password")}
         />
-        <input id="login-button" name={t("auth.login")} type="submit" value={t("auth.login")}/>
+        <input
+          id="login-button"
+          name={t("auth.login")}
+          type="submit"
+          value={t("auth.login")}
+        />
       </form>
     );
   }
   return (
     <Modal open={true}>
-      <Header icon={icon} content={header}/>
+      <Header icon={icon} content={header} />
       <Modal.Content>
         {message && <p id="message">{message}</p>}
         {login}
       </Modal.Content>
       <Modal.Actions>
-        <Button id="close-button" onClick={() => dispatch({ type: "CLOSE_LOGIN" })}>{t("auth.close")}</Button>
+        <Button
+          id="close-button"
+          onClick={() => dispatch({ type: "CLOSE_LOGIN" })}
+        >
+          {t("auth.close")}
+        </Button>
       </Modal.Actions>
     </Modal>
   );

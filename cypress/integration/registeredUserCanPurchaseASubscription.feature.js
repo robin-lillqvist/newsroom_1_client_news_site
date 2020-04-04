@@ -17,10 +17,10 @@ describe("registered user can purchase a subscription", () => {
       response: "fixture:specific_article_2.json"
     });
     cy.route({
-        method: 'POST', 
-        url: "**/subscriptions",
-        response: {status: 'paid' }
-    })
+      method: "POST",
+      url: "**/subscriptions",
+      response: { status: "paid" }
+    });
     cy.route({
       method: "POST",
       url: "**/**",
@@ -52,12 +52,15 @@ describe("registered user can purchase a subscription", () => {
       .click();
     cy.wait(1000);
     cy.get("form[id='payment-form']").should("be.visible");
-    cy.typeInStripeElement("cardnumber", "4242424242424242")
-    cy.typeInStripeElement("exp-date", "0425")
-    cy.typeInStripeElement("cvc", "575")
+    cy.typeInStripeElement("cardnumber", "4242424242424242");
+    cy.typeInStripeElement("exp-date", "0425");
+    cy.typeInStripeElement("cvc", "575");
     cy.get("button")
       .contains("Submit Payment")
       .click();
-    cy.get('#subscription-message').should('contain', "You are now a Premium Platinum member!")
+    cy.get("#subscription-message").should(
+      "contain",
+      "You are now a Premium Platinum member!"
+    );
   });
 });
