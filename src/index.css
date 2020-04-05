@@ -12,3 +12,8 @@
 .logo-image-div {
   width: 100vw !important;
 }
+
+
+#premium-message {
+  color: red!important;
+}
