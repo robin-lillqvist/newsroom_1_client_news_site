@@ -21,5 +21,8 @@
 #card-info {
   margin-left: 35%;
   margin-right: 35%;
+}
 
+#premium-message {
+  color: red!important;
 }
