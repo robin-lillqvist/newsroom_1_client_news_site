@@ -12,3 +12,14 @@
 .logo-image-div {
   width: 100vw !important;
 }
+
+#payment {
+  margin-left: 20%;
+  margin-right: 20%
+}
+
+#card-info {
+  margin-left: 35%;
+  margin-right: 35%;
+
+}
