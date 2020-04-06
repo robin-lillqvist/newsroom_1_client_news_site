@@ -1,42 +1,42 @@
-import React, { useEffect, useState } from "react";
-import { getWeatherData } from "../modules/weather";
+import React, { useEffect, useState } from 'react'
+import { getWeatherData } from '../modules/weather'
 
 const Weather = () => {
-  let [weatherError, setWeatherError] = useState("");
-  let [gotWeather, setGotWeather] = useState(false);
-  let [coords, setCoords] = useState("");
-  let [temp, setTemp] = useState("");
-  let [place, setPlace] = useState("");
-  let [description, setDescription] = useState("");
+  let [weatherError, setWeatherError] = useState('')
+  let [gotWeather, setGotWeather] = useState(false)
+  let [coords, setCoords] = useState('')
+  let [temp, setTemp] = useState('')
+  let [place, setPlace] = useState('')
+  let [description, setDescription] = useState('')
 
   const loadWeatherData = async () => {
-    let weatherData = await getWeatherData(coords);
+    let weatherData = await getWeatherData(coords)
     if (!weatherData.isAxiosError) {
-      setPlace(weatherData.name);
-      setTemp(parseFloat(weatherData.main.temp - 273.15).toFixed(1));
-      setDescription(weatherData.weather[0].description);
-      setGotWeather(true);
+      setPlace(weatherData.name)
+      setTemp(parseFloat(weatherData.main.temp - 273.15).toFixed(1))
+      setDescription(weatherData.weather[0].description)
+      setGotWeather(true)
     } else {
-      setWeatherError("Loading...");
+      setWeatherError('Loading...')
     }
-  };
+  }
 
   const getLocation = () => {
     navigator.geolocation.getCurrentPosition(loc => {
-      setCoords([loc.coords.latitude, loc.coords.longitude]);
-    });
-  };
+      setCoords([loc.coords.latitude, loc.coords.longitude])
+    })
+  }
 
   useEffect(() => {
-    getLocation();
-  }, []);
+    getLocation()
+  }, [])
 
   useEffect(() => {
-    loadWeatherData();
-  }, [coords]);
+    loadWeatherData()
+  }, [coords])
 
   return (
-    <div className="weather-main">
+    <div className='weather-main'>
       {gotWeather ? (
         <p>
           {place}
@@ -49,7 +49,7 @@ const Weather = () => {
         <p>{weatherError}</p>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Weather;
+export default Weather

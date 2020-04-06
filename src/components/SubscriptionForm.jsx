@@ -49,7 +49,7 @@ const SubscriptionForm = props => {
 
   return (
     <>
-      <Segment raised compact>
+      <Segment raised compact id="payment">
         <Form id="payment-form">
           <Header textAlign="center" as="h2" dividing>
             {t("subscription.payment-form")}
@@ -60,7 +60,7 @@ const SubscriptionForm = props => {
           <Header textAlign="center" as="h5">
             {t("subscription.subscription-details-2")}
           </Header>
-          <Segment raised compact>
+          <Segment raised width={12} id="card-info">
             <label>{t("subscription.card-number")}</label>
             <CardNumberElement id="cardnumber" />
             <label>{t("subscription.expiry-date")}</label>

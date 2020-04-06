@@ -15,14 +15,16 @@ const rootReducer = (state = initialState, action) => {
         singleArticle: action.payload,
         showArticlesList: false,
         showSingleArticle: true,
-        flashMessage: undefined
+        flashMessage: undefined,
+        showSubscription: false 
       };
 
     case actionTypes.BACK_TO_ARTICLE_LIST:
       return {
         ...state,
         showArticlesList: true,
-        singleArticle: undefined
+        singleArticle: undefined,
+        showSubscription: false
       };
 
     case actionTypes.CATEGORY_SELECTION:

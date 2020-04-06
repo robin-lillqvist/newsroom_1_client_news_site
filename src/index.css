@@ -1,0 +1,28 @@
+.weather-main {
+
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.logo-image-div {
+  width: 100vw !important;
+}
+
+#payment {
+  margin-left: 20%;
+  margin-right: 20%
+}
+
+#card-info {
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+#premium-message {
+  color: red!important;
+}
